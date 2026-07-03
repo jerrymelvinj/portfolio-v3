@@ -9,15 +9,15 @@ export default function Header() {
 
   return (
     <header className="w-full max-w-7xl mx-auto px-6 py-12 flex justify-between items-center">
-      <Link href="/" className="text-xl font-bold tracking-tight">
-        {portfolioData.home.title}
+      <Link href="/" className="flex items-center">
+        <img src="/Logo.svg" alt={portfolioData.home.title} className="h-[150px] w-auto" />
       </Link>
       <nav className="flex gap-6 text-sm uppercase tracking-widest text-muted">
         {portfolioData.nav.map((item) => {
           const isActive = pathname === item.path;
           return (
-            <Link 
-              key={item.path} 
+            <Link
+              key={item.path}
               href={item.path}
               className={`relative hover:text-foreground transition-colors ${isActive ? 'text-foreground font-medium' : ''}`}
             >
