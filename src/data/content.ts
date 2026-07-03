@@ -11,43 +11,45 @@ export const portfolioData = {
     projects: [
       {
         id: "omron",
-        title: "OMRON Add to Cart",
+        title: "₹1 Lakh in a Single Day vs. One Month",
         description: "Suggestion for a side cart for easy access and inclusion of features like milestone for add more value to the cart.",
         image: "https://placehold.co/1200x800/e2e8f0/64748b?text=OMRON",
         caseStudy: {
+          highlight: "OMRON Healthcare | India",
           role: "Product Designer",
-          timeline: "3 Weeks",
+          timeline: "6 Weeks",
           platform: "Web & Mobile",
-          overview: "Improving the add-to-cart experience for OMRON healthcare by introducing a sliding side cart to reduce friction and bounce rates.",
+          overview: "Overhauled the end-to-end checkout experience, introduced quick-commerce checkout milestones, and streamlined user onboarding with simplified authentication.",
           sections: [
             {
+              id: "executive-summary",
+              title: "1. Executive Summary",
+              content: "The Product: OMRON Medical Devices E-Commerce Platform.\n\nThe Challenge: A complex, fragmented user journey with hidden navigation links made online purchasing frustrating, capping monthly revenue at roughly ₹1 Lakh.\n\nThe Solution: Overhauled the end-to-end checkout experience, introduced quick-commerce checkout milestones, and streamlined user onboarding with simplified authentication.\n\nThe Results: Generated ₹1 Lakh in sales in a single day (matching a previous month's worth of revenue) and entirely cleared out product stock by day two of launch.",
+              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=OMRON+Summary"
+            },
+            {
               id: "the-problem",
-              title: "The Problem",
-              content: "Users were dropping off during the checkout phase. The existing flow redirected users to a completely new page every time they added an item, disrupting their browsing experience.",
+              title: "2. The Problem & Context (The \"Before\")",
+              content: "OMRON is a household name in medical devices, yet the digital shopping experience didn't reflect the brand's reliability. The baseline metrics highlighted serious conversion friction:\n\nComplex Navigation & Hidden Links: Critical paths to find and purchase products were buried under an unintuitive information architecture, leaving users confused during the discovery phase.\n\nHigh Checkout Friction: Forcing users into long, multi-step profile creation loops caused high cart abandonment rates.\n\nRevenue Ceiling: Due to these user experience gaps, online sales were sluggish, averaging just ₹1 Lakh per month.",
+              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=The+Problem"
             },
             {
-              id: "research",
-              title: "Research & Insights",
-              content: "We conducted 15 user interviews and analyzed heatmaps. Key findings showed that users want to confirm their item was added without losing their place on the product page.",
-              image: "https://placehold.co/1200x600/e2e8f0/64748b?text=Research+Affinity+Map"
+              id: "design-strategy",
+              title: "3. The Design Strategy & Solution",
+              content: "To fix the leaky conversion funnel, the redesign focused on accessibility, speed, and modern checkout UX paradigms.\n\nStreamlined Social & Mobile Onboarding\nWe completely bypassed long registration forms. By introducing quick-auth options via Google Login, Email, and Mobile OTP, users could create an account and authenticate instantly, smoothing the very top of the purchasing funnel.\n\nThe \"Sweet Checkout\" Experience\nWe transformed the checkout phase into a highly transparent, clear, and efficient flow:\n\nQuick-Commerce Milestones: Borrowing successful UX patterns from the quick-commerce space, we introduced a clear milestone indicator (e.g., Cart -> Address -> Payment). This managed user expectations and created a psychological sense of forward momentum.\n\nForm Optimization: Stripped away unnecessary input fields, replacing them with a highly accessible, single-column address and checkout layout to reduce cognitive load.",
+              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=Design+Strategy"
             },
             {
-              id: "ideation",
-              title: "Ideation & Iteration",
-              content: "Started with low-fidelity sketches exploring a modal approach vs a side cart approach. The side cart proved to be less intrusive.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=Low+Fidelity+Wireframes"
+              id: "business-impact",
+              title: "4. The Business Impact (The \"After\")",
+              content: "The redesign was launched to immediate, unprecedented commercial success:\n\n• Sales Velocity: ₹1,00,000 / single day (Up from ₹1,00,000 / month)\n• Inventory Status: 100% Out of Stock by Day 2 (Up from Slow-moving stock)\n• Onboarding Friction: Low (Instant Google/Mobile Login)\n• Checkout Usability: Clean, accessible \"Sweet Checkout\"",
+              video: "https://www.w3schools.com/html/mov_bbb.mp4"
             },
             {
-              id: "prototyping",
-              title: "Prototyping & Testing",
-              content: "We built a high-fidelity prototype in Figma. Users were able to interact with the side cart, adjust quantities, and see a milestone progress bar for free shipping.",
-              video: "https://www.w3schools.com/html/mov_bbb.mp4" // Placeholder video
-            },
-            {
-              id: "design-confirmation",
-              title: "Design Confirmation & Handoff",
-              content: "Final UI was polished using the existing OMRON design system. We included micro-interactions for adding items and a satisfying animation when the free shipping milestone is reached.",
-              image: "https://placehold.co/1200x1600/e2e8f0/64748b?text=Final+High+Fidelity+Screens"
+              id: "key-takeaways",
+              title: "5. Key Takeaways & Lessons Learned",
+              content: "Borrow Proven Paradigms: Integrating quick-commerce milestones into traditional e-commerce works because users are already trained on those patterns. It reduces the learning curve instantly.\n\nAccessibility directly impacts ROI: When you fix hidden links and clarify the user journey, you don't just improve usability scores—you unlock massive, immediate business revenue.",
+              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=Takeaways"
             }
           ]
         }

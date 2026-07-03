@@ -29,7 +29,15 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
       {/* Hero Section */}
       <section className="mb-24">
-        <h1 className="text-5xl md:text-7xl font-medium tracking-tight mb-8">{project.title}</h1>
+        <h1 className="text-5xl md:text-7xl font-medium tracking-tight mb-6">{project.title}</h1>
+        
+        {/* @ts-ignore */}
+        {study.highlight && (
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-12">
+            {/* @ts-ignore */}
+            {study.highlight}
+          </h2>
+        )}
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border pt-8 mb-16">
           <div>
@@ -63,7 +71,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           {study.sections.map((section) => (
             <section key={section.id} id={section.id} className="scroll-mt-32">
               <h2 className="text-3xl font-medium mb-8">{section.title}</h2>
-              <p className="text-lg text-muted leading-relaxed mb-12">{section.content}</p>
+              <p className="text-lg text-muted leading-relaxed mb-12 whitespace-pre-line">{section.content}</p>
               
               {section.image && (
                 <div className="w-full rounded-2xl overflow-hidden bg-muted/10">
