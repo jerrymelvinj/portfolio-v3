@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="w-full max-w-7xl mx-auto px-6 py-12">
-      <section className="mb-24 max-w-2xl mt-12">
+    <main className="w-full max-w-7xl mx-auto px-6 py-8 md:py-12">
+      <section className="mb-20 max-w-2xl mt-4 md:mt-8">
         <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-6">{portfolioData.home.title}</h1>
         <p className="text-xl text-muted leading-relaxed">{portfolioData.home.subtitle}</p>
       </section>

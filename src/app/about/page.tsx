@@ -5,14 +5,6 @@ export default function About() {
     <main className="w-full max-w-7xl mx-auto px-6 py-12">
       <section className="max-w-4xl mb-24 mt-12">
         <h1 className="text-4xl font-medium tracking-tight mb-8">{portfolioData.about.title}</h1>
-        
-        <div className="flex gap-4 mb-12">
-          {portfolioData.about.tags.map(tag => (
-            <button key={tag} className="px-5 py-2 border border-border rounded-lg text-sm hover:border-foreground transition-colors">
-              {tag}
-            </button>
-          ))}
-        </div>
 
         <div className="text-xl md:text-2xl leading-relaxed text-muted space-y-8 font-light">
           <p>{portfolioData.about.bio1}</p>
@@ -41,7 +33,7 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {portfolioData.about.communities.map((community) => (
             <div key={community.id} className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted/10 group cursor-pointer">
-               <img src={community.image} alt="Community" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={community.image} alt="Community" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           ))}
         </div>
