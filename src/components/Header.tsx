@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="w-full max-w-7xl mx-auto px-6 py-12 flex justify-between items-center">
       <Link href="/" className="flex items-center">
-        <img src="/Logo.svg" alt={portfolioData.home.title} className="h-[150px] w-auto" />
+        <img src="/Logo.svg" alt={portfolioData.home.title} className="h-24 w-auto" />
       </Link>
       <nav className="flex gap-6 text-sm uppercase tracking-widest text-muted">
         {portfolioData.nav.map((item) => {
