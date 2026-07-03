@@ -73,16 +73,16 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               <h2 className="text-3xl font-medium mb-8">{section.title}</h2>
               <p className="text-lg text-muted leading-relaxed mb-12 whitespace-pre-line">{section.content}</p>
               
-              {section.image && (
+              {(section as any).image && (
                 <div className="w-full rounded-2xl overflow-hidden bg-muted/10">
-                  <img src={section.image} alt={section.title} className="w-full h-auto object-cover" />
+                  <img src={(section as any).image} alt={section.title} className="w-full h-auto object-cover" />
                 </div>
               )}
 
-              {section.video && (
+              {(section as any).video && (
                 <div className="w-full rounded-2xl overflow-hidden bg-muted/10">
                   <video 
-                    src={section.video} 
+                    src={(section as any).video} 
                     controls 
                     muted 
                     loop 
