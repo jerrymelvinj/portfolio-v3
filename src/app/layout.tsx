@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,12 +11,55 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jerry Melvin J | Product Designer",
-  description: "Product Designer reimagining complex challenges into whimsical, impactful, human-centered experiences.",
+  metadataBase: new URL("https://www.jerrymelvinj.com"),
+  title: {
+    default: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    template: "%s | Jerry Melvin J",
+  },
+  description:
+    "Jerry Melvin J is a Senior Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
+  keywords: [
+    "Jerry Melvin J",
+    "Product Designer",
+    "UI UX Specialist",
+    "Bengaluru Designer",
+    "E-Commerce UX",
+    "Design Systems",
+    "Product Design Portfolio",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    description:
+      "Jerry Melvin J is a Senior Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
+    url: "https://www.jerrymelvinj.com",
+    siteName: "Jerry Melvin J Portfolio",
+    images: [
+      {
+        url: "/Logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Jerry Melvin J - Senior Product Designer & UI/UX Specialist",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    description:
+      "Jerry Melvin J is a Senior Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
+    images: ["/Logo.svg"],
+  },
+  other: {
+    "geo.position": "12.9716;77.5946",
+    "geo.placename": "Bengaluru",
+    "geo.region": "IN-KA",
+  },
 };
-
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -23,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
+        <JsonLd />
         <Header />
         {children}
         <Footer />
