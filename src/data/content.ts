@@ -11,7 +11,7 @@ export const portfolioData = {
         id: "omron",
         title: "₹1 Lakh in a Single Day vs. One Month",
         description: "Suggestion for a side cart for easy access and inclusion of features like milestone for add more value to the cart.",
-        image: "https://placehold.co/1200x800/e2e8f0/64748b?text=OMRON",
+        image: "/images/case-studies/omron-cover.jpg",
         caseStudy: {
           highlight: "OMRON Healthcare | India",
           role: "Product Designer",
@@ -56,7 +56,7 @@ export const portfolioData = {
         id: "omron-v2",
         title: "Optimizing E-Commerce Accessibility & Authentication for High-Conversion Checkouts",
         description: "Redesigned the OMRON authentication flow and checkout journey to eliminate onboarding friction and maximize conversions.",
-        image: "https://placehold.co/1200x800/e2e8f0/64748b?text=OMRON+v2",
+        image: "/images/case-studies/omron-v2-cover.jpg",
         caseStudy: {
           highlight: "OMRON Healthcare | Authentication Redesign",
           role: "Product Designer",
@@ -100,7 +100,7 @@ export const portfolioData = {
         id: "ane",
         title: "Bridging the Cultural & Logistics Gap in Gulf E-Commerce",
         description: "Redesigned a localized map-integrated fulfillment system for the UAE market.",
-        image: "https://placehold.co/1200x800/e2e8f0/64748b?text=AnE+Case+Study",
+        image: "/images/case-studies/ane-cover.jpg",
         caseStudy: {
           highlight: "AnE E-Commerce Platform | UAE",
           role: "Product Designer",
