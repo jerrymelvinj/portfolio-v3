@@ -1,9 +1,7 @@
 export const portfolioData = {
   nav: [
     { label: "WORK", path: "/" },
-    { label: "PLAY", path: "/play" },
     { label: "ABOUT", path: "/about" },
-    { label: "PHOTOS", path: "/photos" },
   ],
   home: {
     title: "Jerry Melvin J",
