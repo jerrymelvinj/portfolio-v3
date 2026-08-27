@@ -1,6 +1,7 @@
 "use client";
 import { portfolioData } from "@/data/content";
 import { ArrowUp, MapPin, Mail } from "lucide-react";
+import ContraHireButton from "@/components/ContraHireButton";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -26,7 +27,7 @@ export default function Footer() {
             </a>
           </p>
           <p
-            className="text-sm text-muted flex items-center gap-2"
+            className="text-sm text-muted flex items-center gap-2 mb-6"
             itemProp="address"
             itemScope
             itemType="https://schema.org/PostalAddress"
@@ -36,6 +37,8 @@ export default function Footer() {
             <span itemProp="addressRegion">Karnataka</span>,{" "}
             <span itemProp="addressCountry">India</span>
           </p>
+
+          <ContraHireButton />
         </div>
 
         <div className="flex flex-col items-end gap-6">

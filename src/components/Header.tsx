@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { portfolioData } from "@/data/content";
 import { motion } from "framer-motion";
+import ContraHireButton from "@/components/ContraHireButton";
 
 export default function Header() {
   const pathname = usePathname();
@@ -21,28 +22,31 @@ export default function Header() {
             className="h-12 md:h-16 w-auto"
           />
         </Link>
-        <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm uppercase tracking-widest text-muted">
-          {portfolioData.nav.map((item) => {
-            const isActive = pathname === item.path;
-            return (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`relative hover:text-foreground transition-colors ${
-                  isActive ? "text-foreground font-medium" : ""
-                }`}
-              >
-                {item.label}
-                {isActive && (
-                  <motion.div
-                    layoutId="underline"
-                    className="absolute left-0 right-0 h-px bg-foreground -bottom-1"
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="flex items-center gap-6 md:gap-8">
+          <nav className="flex items-center gap-4 md:gap-6 text-sm uppercase tracking-widest text-muted">
+            {portfolioData.nav.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={`relative hover:text-foreground transition-colors ${
+                    isActive ? "text-foreground font-medium" : ""
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="underline"
+                      className="absolute left-0 right-0 h-px bg-foreground -bottom-1"
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+          <ContraHireButton />
+        </div>
       </div>
     </header>
   );

@@ -2,6 +2,7 @@ import { portfolioData } from "@/data/content";
 import { Download, MapPin } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
+import ContraHireButton from "@/components/ContraHireButton";
 
 export const metadata: Metadata = {
   title: "About Me",
@@ -29,18 +30,21 @@ export default function About() {
           <p>{portfolioData.about.bio2}</p>
         </div>
 
-        <div className="mt-12 flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
+        <div className="mt-12 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
           <p className="text-sm text-foreground/60 font-medium tracking-wide uppercase max-w-md leading-relaxed">
             {portfolioData.about.education}
           </p>
-          <a
-            href="/resume.pdf"
-            download="Jerry_Melvin_Resume.pdf"
-            className="inline-flex shrink-0 items-center gap-3 px-8 py-4 bg-foreground text-background rounded-full font-medium hover:scale-105 transition-transform"
-          >
-            My Resume
-            <Download size={18} />
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="/resume.pdf"
+              download="Jerry_Melvin_Resume.pdf"
+              className="inline-flex shrink-0 items-center gap-3 px-8 py-4 bg-foreground text-background rounded-full font-medium hover:scale-105 transition-transform"
+            >
+              My Resume
+              <Download size={18} />
+            </a>
+            <ContraHireButton />
+          </div>
         </div>
       </section>
 
