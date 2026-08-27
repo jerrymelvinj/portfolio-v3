@@ -23,19 +23,19 @@ export const portfolioData = {
               id: "executive-summary",
               title: "1. Executive Summary",
               content: "The Product: OMRON Medical Devices E-Commerce Platform.\n\nThe Challenge: A complex, fragmented user journey with hidden navigation links made online purchasing frustrating, capping monthly revenue at roughly ₹1 Lakh.\n\nThe Solution: Overhauled the end-to-end checkout experience, introduced quick-commerce checkout milestones, and streamlined user onboarding with simplified authentication.\n\nThe Results: Generated ₹1 Lakh in sales in a single day (matching a previous month's worth of revenue) and entirely cleared out product stock by day two of launch.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=OMRON+Summary"
+              image: "/images/case-studies/omron-summary.jpg"
             },
             {
               id: "the-problem",
               title: "2. The Problem & Context (The \"Before\")",
               content: "OMRON is a household name in medical devices, yet the digital shopping experience didn't reflect the brand's reliability. The baseline metrics highlighted serious conversion friction:\n\nComplex Navigation & Hidden Links: Critical paths to find and purchase products were buried under an unintuitive information architecture, leaving users confused during the discovery phase.\n\nHigh Checkout Friction: Forcing users into long, multi-step profile creation loops caused high cart abandonment rates.\n\nRevenue Ceiling: Due to these user experience gaps, online sales were sluggish, averaging just ₹1 Lakh per month.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=The+Problem"
+              image: "/images/case-studies/omron-problem.jpg"
             },
             {
               id: "design-strategy",
               title: "3. The Design Strategy & Solution",
               content: "To fix the leaky conversion funnel, the redesign focused on accessibility, speed, and modern checkout UX paradigms.\n\nStreamlined Social & Mobile Onboarding\nWe completely bypassed long registration forms. By introducing quick-auth options via Google Login, Email, and Mobile OTP, users could create an account and authenticate instantly, smoothing the very top of the purchasing funnel.\n\nThe \"Sweet Checkout\" Experience\nWe transformed the checkout phase into a highly transparent, clear, and efficient flow:\n\nQuick-Commerce Milestones: Borrowing successful UX patterns from the quick-commerce space, we introduced a clear milestone indicator (e.g., Cart -> Address -> Payment). This managed user expectations and created a psychological sense of forward momentum.\n\nForm Optimization: Stripped away unnecessary input fields, replacing them with a highly accessible, single-column address and checkout layout to reduce cognitive load.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=Design+Strategy"
+              image: "/images/case-studies/omron-strategy.jpg"
             },
             {
               id: "business-impact",
@@ -47,7 +47,7 @@ export const portfolioData = {
               id: "key-takeaways",
               title: "5. Key Takeaways & Lessons Learned",
               content: "Borrow Proven Paradigms: Integrating quick-commerce milestones into traditional e-commerce works because users are already trained on those patterns. It reduces the learning curve instantly.\n\nAccessibility directly impacts ROI: When you fix hidden links and clarify the user journey, you don't just improve usability scores—you unlock massive, immediate business revenue.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=Takeaways"
+              image: "/images/case-studies/omron-takeaways.jpg"
             }
           ]
         }
@@ -68,19 +68,19 @@ export const portfolioData = {
               id: "executive-summary",
               title: "1. Executive Summary",
               content: "The Product: OMRON Medical Devices E-Commerce Platform.\n\nThe Challenge: A highly complex user journey plagued by hidden navigation links and a rigid, high-friction user onboarding process that blocked users from completing purchases smoothly.\n\nThe Solution: Overhauled the platform's accessibility, made the primary purchase pathways completely transparent, and introduced instant multi-channel authentication (Google, Mobile OTP, and Email).\n\nThe Results: Eliminated the drop-offs caused by forced account creation, simplified the end-to-end user journey, and created a frictionless, \"sweet checkout\" experience that allowed users to buy with total ease.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=OMRON+v2+Summary"
+              image: "/images/case-studies/omron-v2-summary.jpg"
             },
             {
               id: "the-problem",
               title: "2. The Problem & Context (The \"Before\")",
               content: "During a deep dive into the original interface, we uncovered significant usability blockers that heavily restricted the platform's performance:\n\n• Hidden Links & Information Architecture Flaws: Critical elements of the primary user journey—including essential navigation links—were visually obscured or buried. This forced users through a complex, frustrating maze just to find what they needed.\n• High-Friction Account Creation: Before a user could even reach the checkout screen, they were met with a mandatory, tedious profile registration loop, acting as a massive roadblock to immediate purchasing.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=The+Problem"
+              image: "/images/case-studies/omron-v2-problem.jpg"
             },
             {
               id: "design-strategy",
               title: "3. The Design Strategy & Solution",
               content: "The goal of this redesign was simple: shed unnecessary steps, bring hidden pathways to the forefront, and ensure the entire process felt effortless.\n\nFrictionless Multi-Channel Identity Management\nTo solve the onboarding bottleneck, we introduced a flexible, one-click authentication system at the top of the funnel. Instead of filling out traditional, long forms, users could choose their preferred method:\n• Instant Google Login: For rapid desktop and mobile entry.\n• Mobile Phone Number (OTP) Login: Highly optimized for regional users who prefer phone-first authentication.\n• Traditional Email Login: Preserved for users who prefer standard credentials.\n\nUncovering the Journey (Accessibility Overhaul)\nWe redesigned the information architecture to ensure that the primary user journey was clean, highly visible, and required minimal cognitive load. Hidden links were brought directly into the main viewport, providing a predictable and straight path from product page to cart.\n\nThe \"Sweet Checkout\" Paradigm\nBy pairing accessible navigation with seamless social/mobile login options, we built what we termed a \"Sweet Checkout\" experience. The entire checkout funnel was streamlined into a clean, minimal UI that ensured users encountered zero distractions or layout confusion right as they were trying to finalize their purchase.",
-              image: "https://placehold.co/1200x600/e2e8f0/64748b?text=UI+Flow:+Checkout+to+Google/OTP+Login"
+              image: "/images/case-studies/omron-v2-strategy.jpg"
             },
             {
               id: "impact",
@@ -91,7 +91,7 @@ export const portfolioData = {
               id: "key-takeaways",
               title: "5. Key Takeaways & Lessons Learned",
               content: "Identity Management IS User Experience: Forcing a manual, complex profile setup before a purchase is a conversion killer. Integrating instant authentication tools like Google and Mobile OTP is one of the highest-leverage UX improvements an e-commerce platform can make.\n\nNever Hide Core Utilities: If a link or navigation option is critical to the user journey, it must be highly visible. Clear visual hierarchy beats beautiful but hidden UI elements every single time.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=Takeaways"
+              image: "/images/case-studies/omron-v2-takeaways.jpg"
             }
           ]
         }
@@ -112,19 +112,19 @@ export const portfolioData = {
               id: "executive-summary",
               title: "1. Executive Summary",
               content: "The Product: AnE E-Commerce Platform (targeting the UAE market: Abu Dhabi, Dubai, and Ras Al Khaimah).\n\nThe Challenge: A lack of clear delivery and fulfillment options—such as same-day delivery or in-store pickup—left users uncertain about when or how they would receive their products, hurting checkout conversions.\n\nThe Solution: Designed a transparent, map-integrated fulfillment system tailored to UAE address infrastructure, giving users complete visibility over rapid delivery and local pickup options.\n\nThe Results: Eliminated the fulfillment communication gap, optimized the shipping address flow, and drastically accelerated the user's path to purchase with clear delivery timelines.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=AnE+Summary"
+              image: "/images/case-studies/ane-summary.jpg"
             },
             {
               id: "the-problem",
               title: "2. The Problem & Context (The \"Before\")",
               content: "Operating across different regions requires a deep understanding of local infrastructure. For users in Abu Dhabi, Dubai, and Ras Al Khaimah (RAK), the standard checkout experience was causing drop-offs due to a major logistics blind spot:\n\n• Fulfillment Blind Spot: The platform lacked flexible delivery options. Users could not easily opt for hyper-local fulfillment methods like in-store pickup or same-day delivery.\n• Address Form Friction: Traditional, rigid address forms caused massive drop-offs because they didn't align well with how addresses are structured and navigated in the UAE.\n• The Cultural & Geographical Gap: Designing from India for a UAE audience meant the team had to look closely at local feedback to understand regional behavioral nuances and expectations around delivery speed.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=The+Problem"
+              image: "/images/case-studies/ane-problem.jpg"
             },
             {
               id: "design-strategy",
               title: "3. The Design Strategy & Solution",
               content: "To unlock revenue, the redesign focused heavily on transparency, localized mapping, and friction-free address forms.\n\nLocalized UX Insights\nThrough direct feedback loops with the local Dubai-based team, we uncovered the cultural gap: UAE consumers expect hyper-fast, highly communicative logistics.\n\nInteractive Fulfillment Mapping & In-Store Pickup\nWe introduced a brand-new fulfillment selection step early in the journey:\n• Better Mapping & Transparency: Instead of making users guess delivery windows, we integrated clean visual mapping that instantly showed the closest pickup location or verified same-day delivery eligibility based on their location.\n• Omnichannel Flexibility: Added clear toggles for In-Store Pickup alongside home delivery, turning a rigid online funnel into a flexible omnichannel experience.\n\nSmoothed Shipping Address Flow\nWe overhauled the address form fields to accommodate local nuances. By reducing fields and incorporating a visual map-pin selector, we eliminated the friction of typing out complex text-based addresses, directly boosting checkout completion rates.",
-              image: "https://placehold.co/1200x600/e2e8f0/64748b?text=Comparison:+Old+vs+New+Address+UI"
+              image: "/images/case-studies/ane-cover.jpg"
             },
             {
               id: "business-impact",
@@ -135,7 +135,7 @@ export const portfolioData = {
               id: "key-takeaways",
               title: "5. Key Takeaways & Lessons Learned",
               content: "UX is Local, Not Universal: What works for address forms in India doesn't automatically translate to the UAE. You have to listen to regional teams to build empathy for the actual end-user's environment.\n\nFulfillment is Part of the Interface: A user's experience doesn't end when they hit \"buy.\" Integrating clear, visual logistics right into the interface is a massive driver for conversion and trust.",
-              image: "https://placehold.co/1200x800/e2e8f0/64748b?text=Takeaways"
+              image: "/images/case-studies/omron-takeaways.jpg"
             }
           ]
         }
