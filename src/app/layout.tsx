@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -67,12 +68,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans`}>
-        <JsonLd />
-        <Header />
-        {children}
-        <Footer />
+    <html lang="en" className="dark bg-[#080808]">
+      <body className={`${inter.variable} font-sans bg-[#080808] text-white selection:bg-white selection:text-black`}>
+        <SmoothScroll>
+          <JsonLd />
+          <Header />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
