@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTheme } from "@/components/ThemeProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,10 +16,15 @@ interface ScrollHighlightTextProps {
 export default function ScrollHighlightText({
   text,
   className = "",
-  highlightColor = "#FFFFFF",
-  baseColor = "#333333",
+  highlightColor,
+  baseColor,
 }: ScrollHighlightTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
+
+  const isDark = theme === "dark";
+  const activeHighlight = highlightColor || (isDark ? "#FFFFFF" : "#0F172A");
+  const activeBase = baseColor || (isDark ? "#333333" : "#CBD5E1");
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -29,9 +35,9 @@ export default function ScrollHighlightText({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         words,
-        { color: baseColor, opacity: 0.3 },
+        { color: activeBase, opacity: 0.35 },
         {
-          color: highlightColor,
+          color: activeHighlight,
           opacity: 1,
           stagger: 0.1,
           scrollTrigger: {
@@ -45,7 +51,7 @@ export default function ScrollHighlightText({
     }, containerRef);
 
     return () => ctx.revert();
-  }, [text, highlightColor, baseColor]);
+  }, [text, activeHighlight, activeBase]);
 
   const words = text.split(" ");
 
@@ -55,7 +61,7 @@ export default function ScrollHighlightText({
         <span
           key={idx}
           className="scroll-word inline-block mr-[0.25em] transition-colors duration-200"
-          style={{ color: baseColor, opacity: 0.3 }}
+          style={{ color: activeBase, opacity: 0.35 }}
         >
           {word}
         </span>

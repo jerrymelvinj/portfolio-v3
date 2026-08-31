@@ -6,6 +6,7 @@ import { portfolioData } from "@/data/content";
 import { motion } from "framer-motion";
 import ContraHireButton from "@/components/ContraHireButton";
 import CopyEmailButton from "@/components/CopyEmailButton";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -20,7 +21,7 @@ export default function Header() {
             width={180}
             height={64}
             priority
-            className="h-10 md:h-12 w-auto invert group-hover:scale-105 transition-transform duration-300"
+            className="h-10 md:h-12 w-auto dark:invert group-hover:scale-105 transition-all duration-300"
           />
         </Link>
 
@@ -49,10 +50,11 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Action Widgets: Copy Email & Contra CTA */}
+        {/* Action Widgets: Copy Email, Theme Toggle, & Contra CTA */}
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <CopyEmailButton email="jerrymelvinj@gmail.com" />
-          <ContraHireButton theme="dark" />
+          <ContraHireButton />
         </div>
       </div>
     </header>
