@@ -17,7 +17,7 @@ export default function Home() {
           </p>
           
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-foreground mb-8 leading-[0.95]">
-            Senior Product <br />
+            Product <br />
             <span className="text-muted font-light">Designer</span>
           </h1>
 

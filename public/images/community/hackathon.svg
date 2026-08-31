@@ -1,0 +1,27 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061c14"/>
+      <stop offset="100%" stop-color="#020a07"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg4)"/>
+  <circle cx="400" cy="300" r="260" fill="url(#glow4)"/>
+  <rect x="80" y="70" width="640" height="460" rx="24" fill="#081a14" stroke="#133d2e" stroke-width="1.5"/>
+  <!-- Code & Prototype Split -->
+  <rect x="120" y="130" width="260" height="240" rx="16" fill="#0c261e" stroke="#1d5440"/>
+  <text x="145" y="170" fill="#34d399" font-family="monospace" font-size="14">&lt;Prototype&gt;</text>
+  <text x="160" y="200" fill="#6ee7b7" font-family="monospace" font-size="13">const state = useMotion()</text>
+  <text x="160" y="230" fill="#a7f3d0" font-family="monospace" font-size="13">animate(spring)</text>
+  <text x="145" y="260" fill="#34d399" font-family="monospace" font-size="14">&lt;/Prototype&gt;</text>
+  <rect x="410" y="130" width="270" height="240" rx="16" fill="#0c261e" stroke="#1d5440"/>
+  <circle cx="545" cy="230" r="45" fill="#10b981" opacity="0.8"/>
+  <path d="M530 230L542 242L565 218" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="120" y="390" width="560" height="100" rx="16" fill="#05120d" stroke="#133d2e"/>
+  <text x="150" y="435" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700">Product Hackathon &amp; Sprints</text>
+  <text x="150" y="465" fill="#6ee7b7" font-family="system-ui, -apple-system, sans-serif" font-size="14">Rapid 24-Hour Design-to-Deployment Challenges</text>
+</svg>

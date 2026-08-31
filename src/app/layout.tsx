@@ -14,11 +14,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jerrymelvinj.com"),
   title: {
-    default: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    default: "Jerry Melvin J | Product Designer & UI/UX Specialist",
     template: "%s | Jerry Melvin J",
   },
   description:
-    "Jerry Melvin J is a Senior Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
+    "Jerry Melvin J is a Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
   keywords: [
     "Jerry Melvin J",
     "Product Designer",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    title: "Jerry Melvin J | Product Designer & UI/UX Specialist",
     description:
-      "Jerry Melvin J is a Senior Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
+      "Jerry Melvin J is a Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
     url: "https://www.jerrymelvinj.com",
     siteName: "Jerry Melvin J Portfolio",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/Logo.svg",
         width: 1200,
         height: 630,
-        alt: "Jerry Melvin J - Senior Product Designer & UI/UX Specialist",
+        alt: "Jerry Melvin J - Product Designer & UI/UX Specialist",
       },
     ],
     locale: "en_US",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    title: "Jerry Melvin J | Product Designer & UI/UX Specialist",
     description:
-      "Jerry Melvin J is a Senior Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
+      "Jerry Melvin J is a Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce UX, and design systems.",
     images: ["/Logo.svg"],
   },
   other: {

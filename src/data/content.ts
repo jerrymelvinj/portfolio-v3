@@ -186,15 +186,48 @@ export const portfolioData = {
       }
     ],
     communities: [
-      { id: "c1", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c2", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c3", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c4", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c5", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c6", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c7", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c8", image: "https://placehold.co/600x600/e2e8f0/64748b" },
-      { id: "c9", image: "https://placehold.co/600x600/e2e8f0/64748b" }
+      {
+        id: "c1",
+        title: "Design Community Meetup",
+        category: "Meetup & Talks",
+        image: "/images/community/meetup.svg",
+        span: "col-span-1 md:col-span-2 row-span-2",
+      },
+      {
+        id: "c2",
+        title: "Design Systems Workshop",
+        category: "Workshop",
+        image: "/images/community/workshop.svg",
+        span: "col-span-1 md:col-span-2 row-span-1",
+      },
+      {
+        id: "c3",
+        title: "UX Journey Mapping Sprint",
+        category: "UX Research",
+        image: "/images/community/whiteboard.svg",
+        span: "col-span-1 md:col-span-1 row-span-1",
+      },
+      {
+        id: "c4",
+        title: "Product Hackathon & Sprints",
+        category: "Hackathon",
+        image: "/images/community/hackathon.svg",
+        span: "col-span-1 md:col-span-1 row-span-1",
+      },
+      {
+        id: "c5",
+        title: "Design Mentorship & Critiques",
+        category: "Mentorship",
+        image: "/images/community/mentorship.svg",
+        span: "col-span-1 md:col-span-2 row-span-1",
+      },
+      {
+        id: "c6",
+        title: "Creative Studio & Tech Tinkering",
+        category: "Creative Lab",
+        image: "/images/community/studio.svg",
+        span: "col-span-1 md:col-span-2 row-span-1",
+      },
     ]
   },
   photos: {

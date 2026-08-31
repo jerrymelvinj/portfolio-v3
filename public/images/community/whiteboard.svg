@@ -1,0 +1,36 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181414"/>
+      <stop offset="100%" stop-color="#0a0808"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <circle cx="400" cy="300" r="260" fill="url(#glow3)"/>
+  <rect x="80" y="70" width="640" height="460" rx="24" fill="#141111" stroke="#2c2220" stroke-width="1.5"/>
+  <!-- Post-it notes & Sticky Brainstorming -->
+  <rect x="130" y="130" width="130" height="130" rx="12" fill="#fef08a" transform="rotate(-4 130 130)"/>
+  <rect x="145" y="160" width="90" height="8" rx="4" fill="#854d0e"/>
+  <rect x="145" y="178" width="70" height="8" rx="4" fill="#a16207"/>
+
+  <rect x="290" y="125" width="130" height="130" rx="12" fill="#fed7aa" transform="rotate(3 290 125)"/>
+  <rect x="310" y="160" width="85" height="8" rx="4" fill="#9a3412"/>
+  <rect x="310" y="178" width="60" height="8" rx="4" fill="#c2410c"/>
+
+  <rect x="450" y="130" width="130" height="130" rx="12" fill="#bbf7d0" transform="rotate(-2 450 130)"/>
+  <rect x="470" y="160" width="80" height="8" rx="4" fill="#166534"/>
+  <rect x="470" y="178" width="65" height="8" rx="4" fill="#15803d"/>
+
+  <rect x="130" y="290" width="540" height="100" rx="16" fill="#1c1615" stroke="#382926"/>
+  <!-- Connector arrows -->
+  <path d="M220 220 C 260 270, 300 270, 350 220" stroke="#fb923c" stroke-width="2.5" stroke-dasharray="6 6"/>
+  <path d="M380 220 C 420 270, 460 270, 510 220" stroke="#4ade80" stroke-width="2.5" stroke-dasharray="6 6"/>
+
+  <rect x="130" y="410" width="540" height="80" rx="16" fill="#0d0a09" stroke="#2c2220"/>
+  <text x="160" y="445" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700">UX Journey Mapping Sprint</text>
+  <text x="160" y="470" fill="#a8a29e" font-family="system-ui, -apple-system, sans-serif" font-size="14">Design Thinking, User Empathy &amp; Information Architecture</text>
+</svg>
