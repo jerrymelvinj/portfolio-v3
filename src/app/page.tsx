@@ -177,10 +177,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 4.5 Shipped & Deployed Projects (Code to Deployment) */}
+      <section className="mb-40 border-t border-border pt-20" id="deployed-works">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-border pb-8 mb-16">
+          <div>
+            <span className="text-xs uppercase tracking-[0.25em] text-muted block mb-3 font-mono">
+              03 // Code to Deployment
+            </span>
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-foreground">
+              Shipped &amp; Live Projects
+            </h2>
+          </div>
+          <p className="text-muted text-sm max-w-md font-mono">
+            End-to-end design in Figma, frontend architecture, and production cloud deployments on Vercel.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-16">
+          {portfolioData.home.otherWorks?.map((work) => (
+            <div
+              key={work.id}
+              className="group relative rounded-3xl overflow-hidden bg-border/20 border border-border/80 hover:border-foreground/40 transition-all duration-500 p-6 md:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center"
+            >
+              <div className="relative w-full lg:w-1/2 aspect-[16/9] rounded-2xl overflow-hidden bg-border/40 border border-border">
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+
+              <div className="w-full lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono tracking-wider flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Live on Vercel
+                    </span>
+                    <span className="text-xs font-mono text-muted uppercase tracking-wider">
+                      {work.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl md:text-4xl font-semibold text-foreground mb-3">
+                    {work.title}
+                  </h3>
+                  <p className="text-sm font-mono text-muted mb-4 uppercase tracking-wide">
+                    {work.tagline}
+                  </p>
+                  <p className="text-base text-muted leading-relaxed mb-6">
+                    {work.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {work.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-full bg-border/40 border border-border text-xs font-mono text-foreground/80"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <a
+                    href={work.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium text-sm hover:scale-105 transition-transform duration-300"
+                  >
+                    Visit Live Site ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* 5. Core Capabilities Grid */}
       <section className="mb-40 border-t border-border pt-20">
         <span className="text-xs uppercase tracking-[0.25em] text-muted block mb-4 font-mono">
-          03 // Expertise
+          04 // Expertise
         </span>
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-16 text-foreground">
           Design Capabilities & Core Toolkit
@@ -229,7 +311,7 @@ export default function Home() {
       {/* 6. Frequently Asked Questions */}
       <section className="mb-20 border-t border-border pt-20">
         <span className="text-xs uppercase tracking-[0.25em] text-muted block mb-4 font-mono">
-          04 // FAQ
+          05 // FAQ
         </span>
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-16 text-foreground">
           Frequently Asked Questions

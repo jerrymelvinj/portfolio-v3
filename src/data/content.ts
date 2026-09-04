@@ -140,6 +140,21 @@ export const portfolioData = {
           ]
         }
       }
+    ],
+    otherWorks: [
+      {
+        id: "eden-and-blooms",
+        title: "Eden & Blooms — Event Decor Studio",
+        category: "Code to Deployment",
+        tagline: "End-to-End Design, Frontend Engineering & Vercel Deployment",
+        description:
+          "Full-cycle product design and frontend development for an event decor studio. Designed in Figma and built from scratch with Next.js, Tailwind CSS, and Framer Motion. Features interactive service showcases, organic balloon & floral gallery viewers, booking flows, and high-performance Vercel cloud deployment.",
+        image: "/images/case-studies/eden-cover.jpg",
+        link: "https://edenandblooms.vercel.app/",
+        techStack: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel", "Figma"],
+        role: "Lead Product Designer & Frontend Developer",
+        year: "2026"
+      }
     ]
   },
   play: {
