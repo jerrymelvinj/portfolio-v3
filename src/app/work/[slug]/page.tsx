@@ -88,16 +88,20 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border pt-8 mb-16">
           <div>
-            <span className="block text-sm text-muted uppercase tracking-widest mb-2">Role</span>
-            <span className="font-medium">{study.role}</span>
+            <span className="block text-sm text-muted uppercase tracking-widest mb-2 font-mono">Role</span>
+            <span className="font-medium text-foreground">{study.role}</span>
           </div>
           <div>
-            <span className="block text-sm text-muted uppercase tracking-widest mb-2">Timeline</span>
-            <span className="font-medium">{study.timeline}</span>
+            <span className="block text-sm text-muted uppercase tracking-widest mb-2 font-mono">Team</span>
+            <span className="font-medium text-foreground">{(study as any).team || "Product Team (PM, Eng, Design)"}</span>
           </div>
           <div>
-            <span className="block text-sm text-muted uppercase tracking-widest mb-2">Platform</span>
-            <span className="font-medium">{study.platform}</span>
+            <span className="block text-sm text-muted uppercase tracking-widest mb-2 font-mono">Timeline</span>
+            <span className="font-medium text-foreground">{study.timeline}</span>
+          </div>
+          <div>
+            <span className="block text-sm text-muted uppercase tracking-widest mb-2 font-mono">Platform</span>
+            <span className="font-medium text-foreground">{study.platform}</span>
           </div>
         </div>
 
