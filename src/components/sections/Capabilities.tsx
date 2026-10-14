@@ -48,12 +48,12 @@ export function Capabilities() {
             return (
               <motion.div
                 key={cap.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: idx * 0.08 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: idx * 0.06 }}
                 whileHover={{ y: -4 }}
-                className="group p-8 rounded-none border border-neutral-800 bg-neutral-950/60 hover:border-white transition-all duration-300 flex flex-col justify-between"
+                className="group p-8 rounded-none border border-neutral-800 bg-neutral-950/60 hover:border-white transition-colors duration-300 transform-gpu flex flex-col justify-between"
               >
                 <div className="space-y-6">
                   <div className="flex items-center justify-between pb-4 border-b border-neutral-900 font-mono text-xs text-neutral-500">

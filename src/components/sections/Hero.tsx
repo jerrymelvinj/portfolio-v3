@@ -8,8 +8,7 @@ import Link from "next/link";
 
 export function Hero() {
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 400], [1, 0.2]);
-  const y = useTransform(scrollY, [0, 400], [0, 60]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0.25]);
 
   // Framer Motion Staggered Mask Reveal
   const lineVariants = {
@@ -43,7 +42,7 @@ export function Hero() {
       id="hero"
       className="relative min-h-[90vh] flex flex-col justify-between pt-32 sm:pt-40 pb-16 px-6 sm:px-8 lg:px-12 bg-black border-b border-neutral-800"
     >
-      <motion.div style={{ opacity, y }} className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
+      <motion.div style={{ opacity }} className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center transform-gpu">
         {/* Semantic, High-Contrast Hero Headline (H1) */}
         <div className="space-y-2 sm:space-y-3">
           <div className="overflow-hidden">

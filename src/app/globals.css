@@ -50,8 +50,17 @@
   body {
     @apply bg-black text-white antialiased selection:bg-white selection:text-black;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    overflow-x: hidden;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
+
+/* Hardware acceleration to prevent scroll blink/flicker */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 /* Subtle architectural grid lines if desired */

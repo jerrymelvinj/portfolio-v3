@@ -34,12 +34,11 @@ export function CaseStudies() {
             return (
               <motion.article
                 key={project.id}
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ scale: 1.015 }}
-                className="group border-b border-neutral-800 pb-24 transition-all duration-300"
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="group border-b border-neutral-800 pb-24 transform-gpu"
               >
                 {/* Project Header Row */}
                 <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-neutral-400 pb-6 border-b border-neutral-900">
