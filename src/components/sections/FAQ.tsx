@@ -16,10 +16,10 @@ export function FAQ() {
         {/* Header */}
         <div className="space-y-3 text-center sm:text-left border-b border-neutral-800 pb-8">
           <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
-            Frequently Asked Questions
+            Design Consulting &amp; Technical FAQ
           </span>
           <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
-            Working Model &amp; Specialization.
+            Technical Specializations &amp; Engagement Model.
           </h2>
         </div>
 

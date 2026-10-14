@@ -14,10 +14,10 @@ export function CaseStudies() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-neutral-800 pb-8">
           <div className="space-y-2">
             <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
-              Selected Case Studies
+              Selected Case Studies &amp; Product Architecture
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
-              Proven Commercial Impact.
+              E-Commerce UX Case Studies &amp; Architecture.
             </h2>
           </div>
           <p className="text-sm font-mono text-neutral-400 max-w-md">

@@ -1,6 +1,164 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      // 1. E-Commerce Checkout Architecture
+      {
+        source: "/work/omron",
+        destination: "/work/ecommerce-checkout-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/work/omron-checkout",
+        destination: "/work/ecommerce-checkout-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/work/omron-checkout-architecture",
+        destination: "/work/ecommerce-checkout-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/omron",
+        destination: "/work/ecommerce-checkout-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/omron-checkout",
+        destination: "/work/ecommerce-checkout-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/omron-checkout-architecture",
+        destination: "/work/ecommerce-checkout-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/ecommerce-checkout-architecture",
+        destination: "/work/ecommerce-checkout-architecture",
+        statusCode: 301,
+      },
+
+      // 2. Multichannel Identity Architecture
+      {
+        source: "/work/omron-v2",
+        destination: "/work/multichannel-identity-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/work/omron-identity",
+        destination: "/work/multichannel-identity-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/work/omron-identity-architecture",
+        destination: "/work/multichannel-identity-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/omron-v2",
+        destination: "/work/multichannel-identity-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/omron-identity",
+        destination: "/work/multichannel-identity-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/omron-identity-architecture",
+        destination: "/work/multichannel-identity-architecture",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/multichannel-identity-architecture",
+        destination: "/work/multichannel-identity-architecture",
+        statusCode: 301,
+      },
+
+      // 3. Gulf E-Commerce Logistics UX
+      {
+        source: "/work/ane",
+        destination: "/work/gulf-ecommerce-logistics-ux",
+        statusCode: 301,
+      },
+      {
+        source: "/work/gulf-logistics",
+        destination: "/work/gulf-ecommerce-logistics-ux",
+        statusCode: 301,
+      },
+      {
+        source: "/work/gulf-logistics-address-architecture",
+        destination: "/work/gulf-ecommerce-logistics-ux",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/ane",
+        destination: "/work/gulf-ecommerce-logistics-ux",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/gulf-logistics",
+        destination: "/work/gulf-ecommerce-logistics-ux",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/gulf-logistics-address-architecture",
+        destination: "/work/gulf-ecommerce-logistics-ux",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/gulf-ecommerce-logistics-ux",
+        destination: "/work/gulf-ecommerce-logistics-ux",
+        statusCode: 301,
+      },
+
+      // 4. Event Decor Studio Experience
+      {
+        source: "/work/eden",
+        destination: "/work/event-decor-studio-experience",
+        statusCode: 301,
+      },
+      {
+        source: "/work/eden-blooms",
+        destination: "/work/event-decor-studio-experience",
+        statusCode: 301,
+      },
+      {
+        source: "/work/eden-and-blooms-studio",
+        destination: "/work/event-decor-studio-experience",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/eden",
+        destination: "/work/event-decor-studio-experience",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/eden-blooms",
+        destination: "/work/event-decor-studio-experience",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/eden-and-blooms-studio",
+        destination: "/work/event-decor-studio-experience",
+        statusCode: 301,
+      },
+      {
+        source: "/case-study/event-decor-studio-experience",
+        destination: "/work/event-decor-studio-experience",
+        statusCode: 301,
+      },
+
+      // Generic wildcard fallback mapping any other /case-study/:path* to /work/:path*
+      {
+        source: "/case-study/:slug*",
+        destination: "/work/:slug*",
+        statusCode: 301,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

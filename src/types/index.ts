@@ -37,6 +37,9 @@ export interface Project {
   };
   keyDeliverables?: string[];
   technologies?: string[];
+  platform?: string;
+  businessImpact?: string;
+  youtubeVideoId?: string;
   accentColor?: string;
   liveUrl?: string;
 }

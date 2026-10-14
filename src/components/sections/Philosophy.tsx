@@ -31,7 +31,7 @@ export function Philosophy() {
               Biography &amp; Design Ethos
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
-              About Jerry Melvin J.
+              Human-Centered Product Design Philosophy.
             </h2>
           </div>
           <div className="text-xs font-mono text-neutral-500 uppercase tracking-widest">

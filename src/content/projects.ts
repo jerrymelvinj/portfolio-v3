@@ -3,8 +3,8 @@ import { Project } from "@/types";
 export const projects: Project[] = [
   {
     id: "omron-checkout",
-    slug: "omron-checkout-architecture",
-    aliases: ["omron", "omron-checkout"],
+    slug: "ecommerce-checkout-architecture",
+    aliases: ["omron-checkout-architecture", "omron-checkout", "omron"],
     title: "Overhauling E-Commerce Checkout Architecture to Drive 30x Daily Purchase Velocity",
     subtitle: "Milestone-Driven Quick-Commerce & Conversion Architecture",
     year: "2024",
@@ -12,6 +12,8 @@ export const projects: Project[] = [
     team: "Lead Product Designer, 1 Frontend Lead, 1 Backend Architect, 1 Product Manager",
     role: "Lead Product Designer — Checkout Architecture & CRO",
     client: "OMRON Medical Devices",
+    platform: "Mobile Web & Progressive Web App",
+    businessImpact: "30x Daily Purchase Velocity Surge, -44% Funnel Drop-off",
     tags: ["E-Commerce UX", "Checkout Architecture", "CRO", "Fintech / Payments"],
     metricsBadges: ["30x Velocity Surge", "-44% Drop-Off", "+27% AOV", "0 Latency Jumps"],
     summary:
@@ -120,8 +122,8 @@ export const projects: Project[] = [
   },
   {
     id: "omron-identity",
-    slug: "omron-identity-architecture",
-    aliases: ["omron-v2", "omron-identity"],
+    slug: "multichannel-identity-architecture",
+    aliases: ["omron-identity-architecture", "omron-v2", "omron-identity"],
     title: "Eliminating Onboarding Friction via Multi-Channel Identity Architecture",
     subtitle: "WCAG 2.1 AAA Accessibility & Frictionless Auth Infrastructure",
     year: "2024",
@@ -129,6 +131,8 @@ export const projects: Project[] = [
     team: "Lead UX Specialist, Accessibility Auditor, 1 Full-Stack Engineer",
     role: "Product Designer & Identity UX Specialist",
     client: "OMRON Healthcare",
+    platform: "Multi-Platform Web & Passkeys",
+    businessImpact: "-78% Onboarding Latency, 100/100 WCAG AAA Score",
     tags: ["Multi-Channel Auth", "Identity UX", "WCAG 2.1 AAA", "Design Systems"],
     metricsBadges: ["-78% Latency", "96.8% Success Rate", "WCAG AAA 100/100", "0 Password Churn"],
     summary:
@@ -227,8 +231,8 @@ export const projects: Project[] = [
   },
   {
     id: "gulf-logistics",
-    slug: "gulf-logistics-address-architecture",
-    aliases: ["ane", "gulf-logistics"],
+    slug: "gulf-ecommerce-logistics-ux",
+    aliases: ["gulf-logistics-address-architecture", "gulf-logistics", "ane"],
     title: "Bridging Regional Address Infrastructure & Fulfillment Transparency in Gulf E-Commerce",
     subtitle: "Localized Map-Integrated Fulfillment Architecture & Bilingual RTL UX",
     year: "2023 - 2024",
@@ -236,6 +240,8 @@ export const projects: Project[] = [
     team: "Lead UX Architect, 1 GIS Specialist, 2 Frontend Developers",
     role: "Lead UX Designer & Information Architect",
     client: "AnE E-Commerce Platform",
+    platform: "Geospatial Map & Bi-directional RTL Web",
+    businessImpact: "94.2% First-Attempt Delivery Rate, -62% Courier Calls",
     tags: ["Spatial / Map UX", "UAE Address Infrastructure", "Bilingual RTL/LTR", "Logistics"],
     metricsBadges: ["94.2% Delivery Accuracy", "-55% Form Friction", "-62% Courier Calls", "RTL Parity"],
     summary:
@@ -333,8 +339,8 @@ export const projects: Project[] = [
   },
   {
     id: "eden-blooms",
-    slug: "eden-and-blooms-studio",
-    aliases: ["eden", "eden-blooms"],
+    slug: "event-decor-studio-experience",
+    aliases: ["eden-and-blooms-studio", "eden-blooms", "eden"],
     title: "Eden & Blooms – Studio & Floral Experience",
     subtitle: "End-to-End Product Design, Frontend Engineering & Vercel Deployment",
     year: "2024",
@@ -342,6 +348,8 @@ export const projects: Project[] = [
     team: "Solo Full-Cycle Designer & Frontend Engineer",
     role: "Full-Cycle Product Designer & Frontend Engineer",
     client: "Eden & Blooms Event Decor Studio",
+    platform: "Next.js 14 Production Web & Edge Caching",
+    businessImpact: "+85% Inquiry Velocity, Sub-Second Global TTFB",
     tags: ["Full-Cycle Design", "Creative Engineering", "Next.js & Motion", "Live Production"],
     metricsBadges: ["Custom Build", "Sub-second Vercel TTFB", "Interactive Gallery", "100% In Production"],
     summary:

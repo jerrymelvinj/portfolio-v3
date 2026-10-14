@@ -17,6 +17,7 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/jerrymelvinjm/",
     github: "https://github.com/jerrymelvinj",
     instagram: "https://www.instagram.com/jerrymelvinjm/",
+    youtube: "https://www.youtube.com/@jerrymelvinj",
     email: "mailto:jerrymelvinj@gmail.com",
   },
   skillsChips: [

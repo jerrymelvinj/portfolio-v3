@@ -15,7 +15,10 @@ import {
   Users,
   Target,
   FileCheck,
+  Zap,
+  Activity,
 } from "lucide-react";
+import { VideoEmbed } from "@/components/ui/VideoEmbed";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -145,6 +148,43 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </div>
 
+        {/* TL;DR Metric Header (Component at very top) */}
+        <section aria-label="TL;DR Metric Summary" className="p-6 sm:p-8 rounded-2xl bg-neutral-950 border border-neutral-800 space-y-6">
+          <div className="flex items-center justify-between pb-4 border-b border-neutral-900 text-xs font-mono">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <span className="text-white font-bold uppercase tracking-widest">TL;DR Metric Header</span>
+            </div>
+            <span className="text-neutral-500 uppercase tracking-wider">Executive Overview</span>
+          </div>
+
+          {/* 4-Item Scannable Grid: Role, Timeline, Platform, Business Impact */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+            <div className="p-4 rounded-xl bg-black border border-neutral-800 space-y-1">
+              <span className="text-neutral-500 uppercase tracking-wider block text-[10px]">01 / Role</span>
+              <span className="text-white font-bold block text-sm leading-snug">{project.role}</span>
+            </div>
+            <div className="p-4 rounded-xl bg-black border border-neutral-800 space-y-1">
+              <span className="text-neutral-500 uppercase tracking-wider block text-[10px]">02 / Timeline</span>
+              <span className="text-white font-bold block text-sm leading-snug">{project.duration || project.year}</span>
+            </div>
+            <div className="p-4 rounded-xl bg-black border border-neutral-800 space-y-1">
+              <span className="text-neutral-500 uppercase tracking-wider block text-[10px]">03 / Platform</span>
+              <span className="text-white font-bold block text-sm leading-snug">{project.platform || "Web & Mobile Application"}</span>
+            </div>
+            <div className="p-4 rounded-xl bg-black border border-neutral-800 space-y-1">
+              <span className="text-neutral-500 uppercase tracking-wider block text-[10px]">04 / Business Impact</span>
+              <span className="text-white font-bold block text-sm leading-snug">{project.businessImpact || (project.impactMetrics[0].value + " " + project.impactMetrics[0].label)}</span>
+            </div>
+          </div>
+
+          {/* Key Executive Takeaway Box */}
+          <div className="p-4 rounded-xl bg-black border border-neutral-900 text-xs sm:text-sm font-mono text-neutral-300 leading-relaxed">
+            <strong className="text-white uppercase tracking-wider block mb-1">Executive Takeaway:</strong>
+            {project.summary}
+          </div>
+        </section>
+
         {/* Hero Section */}
         <header className="space-y-8">
           <div className="space-y-3">
@@ -160,38 +200,6 @@ export default async function CaseStudyPage({ params }: Props) {
                 {project.subtitle}
               </p>
             )}
-          </div>
-
-          {/* Metadata Grid (Role, Timeline, Team, Tech) */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-neutral-800 font-mono text-xs">
-            <div className="space-y-1">
-              <span className="text-neutral-500 uppercase tracking-wider block">Role</span>
-              <span className="text-white font-semibold block">{project.role}</span>
-            </div>
-            <div className="space-y-1">
-              <span className="text-neutral-500 uppercase tracking-wider block">Timeline</span>
-              <span className="text-white font-semibold block">{project.duration || project.year}</span>
-            </div>
-            <div className="space-y-1">
-              <span className="text-neutral-500 uppercase tracking-wider block">Team</span>
-              <span className="text-white font-semibold block">{project.team || "Cross-Functional Squad"}</span>
-            </div>
-            <div className="space-y-1">
-              <span className="text-neutral-500 uppercase tracking-wider block">Live Status</span>
-              {project.liveUrl ? (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-white hover:underline font-bold"
-                >
-                  <span>Production Site</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-              ) : (
-                <span className="text-neutral-400">Deployed In Production</span>
-              )}
-            </div>
           </div>
 
           {/* High-Impact Proof Metrics Banner Upfront (xhulia.com hallmark) */}
@@ -212,6 +220,15 @@ export default async function CaseStudyPage({ params }: Props) {
               </div>
             ))}
           </div>
+
+          {/* Video Walkthrough Embed Component */}
+          <div className="pt-2">
+            <VideoEmbed
+              videoId={project.youtubeVideoId}
+              title={project.title}
+              posterText={project.summary}
+            />
+          </div>
         </header>
 
         {/* Narrative Section 1: Problem & Friction Analysis */}
@@ -222,7 +239,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 01 / Problem &amp; Behavioral Friction
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
-                The Friction Baseline.
+                The Friction Baseline &amp; Funnel Drop-off.
               </h2>
             </div>
 
@@ -234,13 +251,13 @@ export default async function CaseStudyPage({ params }: Props) {
               {project.problemAnalysis.frictionPoints.map((point, pIdx) => (
                 <div
                   key={pIdx}
-                  className="p-5 rounded-xl bg-neutral-950/60 border border-neutral-800 space-y-2"
+                  className="p-5 rounded-xl bg-neutral-950/60 border border-neutral-800 space-y-2 hover:border-neutral-700 transition-colors"
                 >
                   <div className="flex items-center gap-2 text-xs font-mono text-neutral-400">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                    <span>Friction Point #{pIdx + 1}</span>
+                    <span className="font-bold text-red-400/90 uppercase tracking-wider">Friction Point #{pIdx + 1}</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-mono">
                     {point}
                   </p>
                 </div>
@@ -257,7 +274,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 02 / Strategic Decisions &amp; Tradeoffs
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
-                Architectural Execution.
+                Architectural Execution &amp; Strategic Decisions.
               </h2>
               <p className="text-sm font-mono text-neutral-400 max-w-2xl">
                 Every design choice optimized for conversion velocity, human clarity, and system scalability.
@@ -322,7 +339,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 03 / Comparative Impact
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
-                Before &amp; After Transformation.
+                Before &amp; After Transformation Matrix.
               </h2>
             </div>
 
@@ -369,7 +386,7 @@ export default async function CaseStudyPage({ params }: Props) {
               04 / Deliverables &amp; System Specs
             </span>
             <h2 className="text-xl sm:text-3xl font-extrabold uppercase tracking-tight text-white">
-              Shipped Assets.
+              Shipped Production Assets &amp; Specifications.
             </h2>
           </div>
 
