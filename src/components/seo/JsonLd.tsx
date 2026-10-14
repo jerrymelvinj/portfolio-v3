@@ -16,6 +16,7 @@ export function JsonLd() {
       siteConfig.socials.instagram,
       siteConfig.socials.youtube,
       siteConfig.socials.github,
+      "https://jerrymelvinj.blogspot.com",
     ],
     address: {
       "@type": "PostalAddress",

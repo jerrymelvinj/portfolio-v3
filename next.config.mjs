@@ -157,6 +157,36 @@ const nextConfig = {
         destination: "/work/:slug*",
         statusCode: 301,
       },
+
+      // 5. Blog & Editorial Aliases & External Post Redirects
+      {
+        source: "/writing",
+        destination: "/blog",
+        statusCode: 301,
+      },
+      {
+        source: "/articles",
+        destination: "/blog",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/the-ux-of-deception-unpacking",
+        destination:
+          "https://jerrymelvinj.blogspot.com/2026/10/the-ux-of-deception-unpacking.html",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/the-ux-of-deception-unpacking-lenskart-bogo",
+        destination:
+          "https://jerrymelvinj.blogspot.com/2026/10/the-ux-of-deception-unpacking.html",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/lenskart-bogo-illusion",
+        destination:
+          "https://jerrymelvinj.blogspot.com/2026/10/the-ux-of-deception-unpacking.html",
+        statusCode: 301,
+      },
     ];
   },
 };

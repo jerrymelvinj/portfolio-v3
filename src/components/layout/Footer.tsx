@@ -4,7 +4,7 @@ import * as React from "react";
 import { siteConfig } from "@/content/site-config";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Logo } from "@/components/ui/Logo";
-import { ArrowUp, ArrowUpRight, Mail, Github, Linkedin, Instagram, MapPin } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Mail, Github, Linkedin, Instagram, MapPin, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -113,10 +113,10 @@ export function Footer() {
             </span>
           </div>
 
-          {/* Col 3: Social Profiles */}
+          {/* Col 3: Social Profiles & Editorial */}
           <div className="space-y-3 font-mono text-xs">
             <span className="text-neutral-500 uppercase tracking-wider block">
-              Network &amp; Code
+              Network &amp; Writing
             </span>
             <div className="flex flex-col space-y-2">
               <a
@@ -146,6 +146,13 @@ export function Footer() {
                 <Instagram className="w-3.5 h-3.5" />
                 <span>Instagram ↗</span>
               </a>
+              <Link
+                href="/blog"
+                className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2 pt-1 border-t border-neutral-900"
+              >
+                <BookOpen className="w-3.5 h-3.5 text-neutral-400" />
+                <span>Blog &amp; Essays ↗</span>
+              </Link>
             </div>
           </div>
 
@@ -175,11 +182,18 @@ export function Footer() {
         {/* Bottom Stark Copyright Bar */}
         <div className="border-t border-neutral-900 px-6 sm:px-8 lg:px-12 py-6">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-500">
-            <div>
-              Jerry Melvin J © {siteConfig.copyrightYear}
+            <div className="flex flex-wrap items-center gap-4">
+              <span>Jerry Melvin J &copy; {siteConfig.copyrightYear}</span>
+              <span className="text-neutral-700 hidden sm:inline">&bull;</span>
+              <Link
+                href="/blog"
+                className="text-neutral-400 hover:text-white transition-colors underline-offset-4 hover:underline"
+              >
+                Blog / UX Teardowns
+              </Link>
             </div>
             <div>
-              Inspired by xhulia.com • Built with Next.js, Tailwind CSS, Lenis &amp; Framer Motion
+              Inspired by xhulia.com &bull; Built with Next.js, Tailwind CSS, Lenis &amp; Framer Motion
             </div>
           </div>
         </div>
