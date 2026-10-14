@@ -1,61 +1,83 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Toaster } from "@/components/ui/sonner";
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
 export const viewport: Viewport = {
-  themeColor: "#09090b",
+  themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
 
 export const metadata: Metadata = {
-  title: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+  metadataBase: new URL("https://jerrymelvinj.com"),
+  title: {
+    default: "Jerry Melvin J — Product Designer & UI/UX Specialist",
+    template: "%s | Jerry Melvin J",
+  },
   description:
-    "Portfolio of Jerry Melvin J — Senior Product Designer specializing in e-commerce conversion optimization, design systems, and frontend UI engineering.",
+    "Jerry Melvin J is a Product Designer & UI/UX Specialist based in Bengaluru, specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences 0 → 1.",
   keywords: [
     "Jerry Melvin J",
     "Product Designer",
     "UI/UX Specialist",
     "Senior Product Designer Bengaluru",
-    "E-Commerce UX Optimization",
+    "E-Commerce Checkout Architecture",
+    "Conversion Rate Optimization (CRO)",
     "Design Systems Architecture",
-    "Authentication UX",
+    "Multi-Channel Authentication UX",
+    "WCAG 2.1 AAA Accessibility",
     "Frontend UI Engineering",
     "Next.js Portfolio",
+    "xhulia.com inspired portfolio",
   ],
-  authors: [{ name: "Jerry Melvin J", url: "https://jerrymelvin.dev" }],
+  authors: [{ name: "Jerry Melvin J", url: "https://jerrymelvinj.com" }],
   creator: "Jerry Melvin J",
-  metadataBase: new URL("https://jerrymelvin.dev"),
+  publisher: "Jerry Melvin J",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jerrymelvin.dev",
-    title: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    url: "https://jerrymelvinj.com",
+    siteName: "Jerry Melvin J — Product Designer Portfolio",
+    title: "Jerry Melvin J — Product Designer & UI/UX Specialist",
     description:
-      "Senior Product Designer specializing in e-commerce conversion optimization, design systems, and frontend UI engineering.",
-    siteName: "Jerry Melvin J Portfolio",
+      "Crafting high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences 0 → 1.",
     images: [
       {
-        url: "/og-preview.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jerry Melvin J — Senior Product Designer & UI/UX Specialist",
+        alt: "Jerry Melvin J — Product Designer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jerry Melvin J | Senior Product Designer & UI/UX Specialist",
+    title: "Jerry Melvin J — Product Designer & UI/UX Specialist",
     description:
-      "Senior Product Designer specializing in e-commerce conversion optimization, design systems, and frontend UI engineering.",
-    creator: "@jerrymelvin",
-    images: ["/og-preview.png"],
+      "Crafting high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences 0 → 1.",
+    creator: "@jerrymelvinjm",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -76,12 +98,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="min-h-screen bg-zinc-950 text-zinc-100 font-sans antialiased flex flex-col justify-between selection:bg-cyan-500/25 selection:text-cyan-200">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <Toaster position="bottom-right" richColors />
+    <html lang="en" className={`${inter.variable} dark bg-black`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <JsonLd />
+      </head>
+      <body className="min-h-screen bg-black text-white font-sans antialiased flex flex-col justify-between selection:bg-white selection:text-black">
+        <SmoothScrollProvider>
+          <CustomCursor />
+          <Navbar />
+          <main className="flex-1 w-full">{children}</main>
+          <Footer />
+          <Toaster position="bottom-right" theme="dark" />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

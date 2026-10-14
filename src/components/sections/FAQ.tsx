@@ -8,45 +8,50 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { HelpCircle, Sparkles } from "lucide-react";
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto relative">
-      {/* Header */}
-      <div className="space-y-4 mb-12 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/30 text-cyan-400 text-xs font-mono font-medium">
-          <HelpCircle className="w-3.5 h-3.5" />
-          <span>Frequently Asked Questions</span>
+    <section id="faq" className="py-24 px-6 sm:px-8 lg:px-12 bg-black border-b border-neutral-800">
+      <div className="max-w-4xl mx-auto space-y-12">
+        {/* Header */}
+        <div className="space-y-3 text-center sm:text-left border-b border-neutral-800 pb-8">
+          <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+            Frequently Asked Questions
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
+            Working Model &amp; Specialization.
+          </h2>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-          Working Model & Specializations
-        </h2>
-        <p className="text-base text-zinc-400 max-w-xl mx-auto">
-          Insights into design methodology, technical integration, remote collaboration,
-          and engagement workflows.
-        </p>
-      </div>
 
-      {/* Accordion */}
-      <div className="space-y-3">
-        <Accordion type="single" collapsible defaultValue="faq-1" className="w-full">
-          {faqItems.map((item) => (
-            <AccordionItem key={item.id} value={item.id}>
-              <AccordionTrigger className="text-left font-semibold">
-                <span className="flex items-center gap-3">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400/80 shrink-0" />
-                  {item.question}
-                </span>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-zinc-300 pl-5 text-sm sm:text-base leading-relaxed border-l border-zinc-800 ml-1 mt-1">
-                  {item.answer}
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {/* Accordion */}
+        <div className="space-y-2">
+          <Accordion type="single" collapsible defaultValue="faq-1" className="w-full">
+            {faqItems.map((item, idx) => {
+              const num = String(idx + 1).padStart(2, "0");
+              return (
+                <AccordionItem
+                  key={item.id}
+                  value={item.id}
+                  className="border-b border-neutral-800 py-2"
+                >
+                  <AccordionTrigger className="text-left font-bold text-base sm:text-lg text-white hover:text-neutral-300 py-4 transition-colors">
+                    <span className="flex items-center gap-4">
+                      <span className="text-xs font-mono text-neutral-500">
+                        [{num}]
+                      </span>
+                      <span>{item.question}</span>
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6">
+                    <p className="text-neutral-400 pl-8 text-sm sm:text-base leading-relaxed font-mono">
+                      {item.answer}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
+        </div>
       </div>
     </section>
   );

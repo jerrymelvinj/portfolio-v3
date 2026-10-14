@@ -1,147 +1,199 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { siteConfig } from "@/content/site-config";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowDown, ArrowUpRight, Sparkles, Layers, ShieldCheck, Zap } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 400], [1, 0.2]);
+  const y = useTransform(scrollY, [0, 400], [0, 60]);
+
+  // Framer Motion Staggered Mask Reveal
+  const lineVariants = {
+    hidden: { y: "115%", opacity: 0 },
+    visible: (custom: number) => ({
+      y: "0%",
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1], // Apple / Framer smooth deceleration
+        delay: 0.15 + custom * 0.12,
       },
-    },
+    }),
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (custom: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: [0.215, 0.61, 0.355, 1] },
-    },
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+        delay: 0.55 + custom * 0.1,
+      },
+    }),
   };
+
+  // Interactive floating skills
+  const chips = siteConfig.skillsChips;
 
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-grid-pattern glow-ambient"
+      className="relative min-h-[96vh] flex flex-col justify-between pt-32 sm:pt-40 pb-16 px-6 sm:px-8 lg:px-12 bg-black border-b border-neutral-800"
     >
-      {/* Background ambient light orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-gradient-to-tr from-cyan-500/15 via-blue-600/10 to-indigo-500/15 blur-[120px] rounded-full pointer-events-none -z-10" />
-
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <motion.div style={{ opacity, y }} className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
+        {/* Availability / Status ribbon */}
         <motion.div
-          variants={containerVariants}
+          custom={0}
+          variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-8"
+          className="flex items-center gap-3 pb-8"
         >
-          {/* Availability & Location Top Badge */}
-          <motion.div variants={itemVariants} className="flex justify-center">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 backdrop-blur-md shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-mono font-medium text-cyan-200">
-                {siteConfig.availabilityStatus}
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Main Headline */}
-          <motion.div variants={itemVariants} className="space-y-3">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Jerry Melvin J
-              <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-semibold text-gradient-cyan">
-                Senior Product Designer & UI/UX Specialist
-              </span>
-            </h1>
-          </motion.div>
-
-          {/* Subtitle */}
-          <motion.p
-            variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed font-normal"
-          >
-            {siteConfig.tagline}
-          </motion.p>
-
-          {/* Focus Tags */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap items-center justify-center gap-2 pt-1"
-          >
-            {siteConfig.focusTags.map((tag) => (
-              <Badge
-                key={tag}
-                variant="outline"
-                className="bg-zinc-900/80 border-zinc-700/80 hover:border-cyan-500/50 hover:bg-zinc-800 text-zinc-300 px-3 py-1 text-xs sm:text-sm font-medium transition-all"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-          >
-            <Button
-              asChild
-              size="lg"
-              variant="glow"
-              className="w-full sm:w-auto text-base gap-2 px-8 shadow-xl shadow-cyan-500/20"
-            >
-              <Link href="#work">
-                <Sparkles className="w-4 h-4" /> Explore Case Studies
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto text-base gap-2 px-8 border-zinc-700 bg-zinc-900/80 hover:bg-zinc-800 hover:text-white"
-            >
-              <Link href="#contact">
-                Get in Touch <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </Button>
-          </motion.div>
-
-          {/* Proof Stats Ribbon */}
-          <motion.div
-            variants={itemVariants}
-            className="pt-10 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-zinc-800/80 text-left"
-          >
-            {siteConfig.stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-xl bg-zinc-900/40 border border-white/5 backdrop-blur-sm"
-              >
-                <div className="text-xl sm:text-2xl font-bold font-mono text-cyan-400">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-zinc-400 mt-1 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-700 bg-neutral-900/80 text-xs font-mono text-neutral-300">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>{siteConfig.availabilityStatus}</span>
+          </span>
+          <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest hidden sm:inline-block">
+            {siteConfig.coordinates}
+          </span>
         </motion.div>
-      </div>
 
-      {/* Down indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-zinc-500 animate-bounce hidden md:block">
-        <Link href="#work" aria-label="Scroll to Work section">
-          <ArrowDown className="w-5 h-5" />
-        </Link>
+        {/* Massive Greeting & Typography Reveal */}
+        <div className="space-y-1 sm:space-y-2">
+          {/* Line 1 */}
+          <div className="overflow-hidden">
+            <motion.h1
+              custom={0}
+              variants={lineVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.75rem] font-black tracking-tighter uppercase text-white leading-[0.92]"
+            >
+              Hi, I&apos;m Jerry Melvin J.
+            </motion.h1>
+          </div>
+
+          {/* Line 2 */}
+          <div className="overflow-hidden">
+            <motion.h2
+              custom={1}
+              variants={lineVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.75rem] font-black tracking-tighter uppercase text-white leading-[0.92]"
+            >
+              I Design Complex Digital
+            </motion.h2>
+          </div>
+
+          {/* Line 3 with high contrast highlight */}
+          <div className="overflow-hidden">
+            <motion.div
+              custom={2}
+              variants={lineVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.75rem] font-black tracking-tighter uppercase text-neutral-400 leading-[0.92] flex items-center gap-4 flex-wrap"
+            >
+              <span className="text-white">Products 0 → 1.</span>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Sub-headline & Bio snippet */}
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <motion.div
+            custom={3}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+            className="md:col-span-8 space-y-4"
+          >
+            <p className="text-lg sm:text-2xl text-neutral-300 font-normal leading-relaxed max-w-3xl">
+              Product Designer & UI/UX Specialist based in Bengaluru. Specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences.
+            </p>
+            <p className="text-sm sm:text-base text-neutral-500 font-normal leading-relaxed max-w-2xl font-mono">
+              Proven commercial impact across Healthcare E-Commerce, Multi-Channel Auth, and Regional UAE Logistics.
+            </p>
+          </motion.div>
+
+          <motion.div
+            custom={4}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+            className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-4 md:items-end justify-center"
+          >
+            <Link
+              href="#work"
+              className="group inline-flex items-center justify-between gap-4 px-6 py-4 bg-white text-black font-extrabold uppercase text-xs tracking-wider rounded-none hover:bg-neutral-200 transition-colors w-full sm:w-auto"
+            >
+              <span>Explore Selected Work</span>
+              <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
+            </Link>
+            <a
+              href={siteConfig.socials.email}
+              className="group inline-flex items-center justify-between gap-4 px-6 py-4 border border-neutral-700 bg-black text-white font-extrabold uppercase text-xs tracking-wider rounded-none hover:border-white transition-colors w-full sm:w-auto"
+            >
+              <span>jerrymelvinj@gmail.com</span>
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Floating interactive tags / chips for skills */}
+        <motion.div
+          custom={5}
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate="visible"
+          className="mt-12 pt-8 border-t border-neutral-800"
+        >
+          <div className="flex items-center justify-between pb-4">
+            <span className="text-xs uppercase font-mono tracking-widest text-neutral-500">
+              Interactive Skill Tags & Capabilities [Drag or Hover]
+            </span>
+            <span className="text-xs font-mono text-neutral-600 hidden sm:inline-block">
+              {chips.length} Core Competencies
+            </span>
+          </div>
+
+          <div className="flex flex-wrap gap-2.5 sm:gap-3">
+            {chips.map((chip, index) => (
+              <motion.div
+                key={chip}
+                drag
+                dragConstraints={{ left: -15, right: 15, top: -10, bottom: 10 }}
+                whileHover={{ scale: 1.08, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-neutral-800 bg-neutral-950 text-neutral-300 hover:text-black hover:bg-white hover:border-white transition-colors duration-200 cursor-grab active:cursor-grabbing select-none text-xs sm:text-sm font-mono"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 group-hover:bg-black" />
+                <span>{chip}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Bottom Proof Metric Strip */}
+      <div className="max-w-7xl mx-auto w-full mt-12 pt-6 border-t border-neutral-800/80 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        {siteConfig.stats.map((stat, i) => (
+          <div key={i} className="space-y-1">
+            <div className="text-2xl sm:text-3xl font-black font-mono tracking-tight text-white">
+              {stat.value}
+            </div>
+            <div className="text-xs font-mono uppercase text-neutral-500 tracking-wider">
+              {stat.label}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

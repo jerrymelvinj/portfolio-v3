@@ -1,123 +1,181 @@
+"use client";
+
 import * as React from "react";
-import Link from "next/link";
 import { siteConfig } from "@/content/site-config";
-import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, MapPin, Heart, ArrowUp } from "lucide-react";
+import { Magnetic } from "@/components/ui/Magnetic";
+import { ArrowUp, ArrowUpRight, Mail, Github, Linkedin, Instagram, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="relative border-t border-white/10 bg-zinc-950/90 pt-16 pb-12 overflow-hidden">
-      {/* Background ambient gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/10 to-transparent pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-zinc-800/80">
-          {/* Col 1: Brand & Tagline */}
-          <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center font-mono font-bold text-xs text-cyan-400">
-                JM
-              </div>
-              <span className="font-bold text-lg text-white">
-                {siteConfig.name}
+    <footer id="contact" className="bg-black text-white border-t border-neutral-800 overflow-hidden">
+      {/* Massive Infinite Marquee */}
+      <div className="py-6 border-b border-neutral-800 bg-neutral-950/60 overflow-hidden select-none">
+        <div className="animate-marquee flex items-center gap-8 whitespace-nowrap text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-400">
+          {[...Array(4)].map((_, i) => (
+            <React.Fragment key={i}>
+              <span className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-white" />
+                <span>OPEN FOR Q4/2026 PRODUCTS &amp; CONSULTING</span>
               </span>
+              <span className="text-neutral-600">/</span>
+              <span>HIGH-CONVERSION CHECKOUT ARCHITECTURE</span>
+              <span className="text-neutral-600">/</span>
+              <span>SCALABLE FIGMA &amp; CODE DESIGN SYSTEMS</span>
+              <span className="text-neutral-600">/</span>
+              <span>BENGALURU, INDIA</span>
+              <span className="text-neutral-600">/</span>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+
+      {/* Main Action Area */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24 sm:py-32 flex flex-col items-center justify-center text-center space-y-12">
+        <div className="space-y-3">
+          <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+            Have a project or design challenge in mind?
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-neutral-400">
+            Let&apos;s build something that scales.
+          </h2>
+        </div>
+
+        {/* Massive Magnetic Contact Button with Color Inversion on Hover */}
+        <Magnetic strength={0.35} className="w-full flex justify-center">
+          <a
+            href={siteConfig.socials.email}
+            aria-label="Send email to Jerry Melvin J"
+            className="group relative inline-flex items-center justify-center px-8 sm:px-16 py-10 sm:py-16 w-full max-w-4xl border-2 border-white bg-black text-white hover:bg-white hover:text-black transition-all duration-300 ease-out cursor-pointer select-none"
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+              <span className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter transition-transform group-hover:scale-105 duration-300">
+                CLICK TO MAIL ME
+              </span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-current flex items-center justify-center transition-transform group-hover:rotate-45 duration-300">
+                <ArrowUpRight className="w-6 h-6 sm:w-8 sm:h-8" />
+              </div>
             </div>
-            <p className="text-sm text-zinc-400 max-w-md leading-relaxed">
-              Senior Product Designer & UI/UX Specialist crafting high-converting e-commerce
-              funnels, resilient design systems, and delightful digital products.
+          </a>
+        </Magnetic>
+
+        {/* Bio reflection snippet */}
+        <div className="max-w-2xl mx-auto pt-6">
+          <blockquote className="text-sm sm:text-base text-neutral-400 italic font-mono leading-relaxed">
+            &ldquo;I don&apos;t always know where a design is going when I start, but somewhere in the middle, it finds its shape. That&apos;s the part I live for.&rdquo;
+          </blockquote>
+          <span className="block mt-2 text-xs font-mono uppercase tracking-widest text-neutral-500">
+            — Jerry Melvin J, Bengaluru
+          </span>
+        </div>
+      </div>
+
+      {/* Footer Metadata & Social Columns */}
+      <div className="border-t border-neutral-800 bg-neutral-950/40">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Col 1: Identity */}
+          <div className="space-y-3">
+            <div className="text-sm font-bold uppercase tracking-wider text-white">
+              {siteConfig.name}
+            </div>
+            <p className="text-xs text-neutral-400 leading-relaxed font-mono">
+              Product Designer &amp; UI/UX Specialist crafting human-centered digital experiences 0 → 1.
             </p>
-            <div className="flex items-center gap-2 pt-2">
-              <Badge
-                variant="emerald"
-                className="gap-1.5 px-3 py-1 font-mono text-xs"
-              >
-                <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{siteConfig.locationBadge}</span>
-              </Badge>
+            <div className="flex items-center gap-1.5 text-xs font-mono text-neutral-500">
+              <MapPin className="w-3.5 h-3.5 text-neutral-400" />
+              <span>{siteConfig.location}</span>
             </div>
           </div>
 
-          {/* Col 2: Navigation Links */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Navigation
-            </h4>
-            <ul className="space-y-2 text-sm text-zinc-400">
-              <li>
-                <Link href="#work" className="hover:text-cyan-400 transition-colors">
-                  Featured Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="#capabilities" className="hover:text-cyan-400 transition-colors">
-                  Core Capabilities
-                </Link>
-              </li>
-              <li>
-                <Link href="#philosophy" className="hover:text-cyan-400 transition-colors">
-                  Design Philosophy
-                </Link>
-              </li>
-              <li>
-                <Link href="#faq" className="hover:text-cyan-400 transition-colors">
-                  FAQ & Working Model
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="hover:text-cyan-400 transition-colors">
-                  Get in Touch
-                </Link>
-              </li>
-            </ul>
+          {/* Col 2: Direct Email */}
+          <div className="space-y-3 font-mono text-xs">
+            <span className="text-neutral-500 uppercase tracking-wider block">
+              Direct Inquiries
+            </span>
+            <a
+              href={siteConfig.socials.email}
+              className="text-white hover:underline text-sm font-semibold block"
+            >
+              {siteConfig.email}
+            </a>
+            <span className="text-neutral-500 block">
+              Response SLA: &lt; 24 hours
+            </span>
           </div>
 
-          {/* Col 3: Direct Connect */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Direct Channels
-            </h4>
-            <div className="flex flex-col space-y-2.5 text-sm">
-              <a
-                href={siteConfig.socials.email}
-                className="flex items-center gap-2 text-zinc-400 hover:text-cyan-400 transition-colors"
-              >
-                <Mail className="w-4 h-4 text-cyan-400" />
-                <span>{siteConfig.email}</span>
-              </a>
+          {/* Col 3: Social Profiles */}
+          <div className="space-y-3 font-mono text-xs">
+            <span className="text-neutral-500 uppercase tracking-wider block">
+              Network &amp; Code
+            </span>
+            <div className="flex flex-col space-y-2">
               <a
                 href={siteConfig.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-zinc-400 hover:text-cyan-400 transition-colors"
+                className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2"
               >
-                <Linkedin className="w-4 h-4 text-blue-400" />
-                <span>LinkedIn Profile</span>
+                <Linkedin className="w-3.5 h-3.5" />
+                <span>LinkedIn Profile ↗</span>
               </a>
               <a
                 href={siteConfig.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-zinc-400 hover:text-cyan-400 transition-colors"
+                className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2"
               >
-                <Github className="w-4 h-4 text-zinc-300" />
-                <span>GitHub Workspace</span>
+                <Github className="w-3.5 h-3.5" />
+                <span>GitHub Workspace ↗</span>
+              </a>
+              <a
+                href={siteConfig.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <Instagram className="w-3.5 h-3.5" />
+                <span>Instagram ↗</span>
               </a>
             </div>
           </div>
+
+          {/* Col 4: Top Action */}
+          <div className="space-y-3 font-mono text-xs flex flex-col md:items-end justify-between">
+            <div className="space-y-1 md:text-right">
+              <span className="text-neutral-500 uppercase tracking-wider block">
+                Local Time
+              </span>
+              <span className="text-white font-bold block">
+                Asia / Kolkata (IST)
+              </span>
+              <span className="text-neutral-500 block">
+                {siteConfig.coordinates}
+              </span>
+            </div>
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-2 px-3 py-2 border border-neutral-800 text-neutral-400 hover:text-white hover:border-white transition-colors"
+            >
+              <span>Back to Top</span>
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p className="flex items-center gap-1">
-            © {new Date().getFullYear()} Jerry Melvin J. Designed with empathy & built with Next.js & Tailwind.
-          </p>
-          <a
-            href="#hero"
-            className="flex items-center gap-1 text-zinc-400 hover:text-cyan-400 transition-colors"
-          >
-            <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </a>
+        {/* Bottom Stark Copyright Bar */}
+        <div className="border-t border-neutral-900 px-6 sm:px-8 lg:px-12 py-6">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-500">
+            <div>
+              Jerry Melvin J © {siteConfig.copyrightYear}
+            </div>
+            <div>
+              Inspired by xhulia.com • Built with Next.js, Tailwind CSS, Lenis &amp; Framer Motion
+            </div>
+          </div>
         </div>
       </div>
     </footer>
