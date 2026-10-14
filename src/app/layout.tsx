@@ -100,7 +100,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} dark bg-black`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/Logo.svg" type="image/svg+xml" sizes="any" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <JsonLd />
       </head>

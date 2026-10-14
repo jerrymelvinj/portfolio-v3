@@ -3,6 +3,7 @@
 import * as React from "react";
 import { siteConfig } from "@/content/site-config";
 import { Magnetic } from "@/components/ui/Magnetic";
+import { Logo } from "@/components/ui/Logo";
 import { ArrowUp, ArrowUpRight, Mail, Github, Linkedin, Instagram, MapPin } from "lucide-react";
 import Link from "next/link";
 
@@ -79,8 +80,13 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Col 1: Identity */}
           <div className="space-y-3">
-            <div className="text-sm font-bold uppercase tracking-wider text-white">
-              {siteConfig.name}
+            <div className="flex items-center gap-2.5">
+              <div className="flex items-center justify-center w-7 h-7 rounded-md bg-neutral-900 border border-neutral-800">
+                <Logo size={18} className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-sm font-bold uppercase tracking-wider text-white">
+                {siteConfig.name}
+              </span>
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed font-mono">
               Product Designer &amp; UI/UX Specialist crafting human-centered digital experiences 0 → 1.
