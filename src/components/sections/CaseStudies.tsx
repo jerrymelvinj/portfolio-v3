@@ -190,7 +190,7 @@ export function CaseStudies() {
                         <div className="space-y-4">
                           <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pb-2 border-b border-neutral-800">
                             <span>PRODUCTION VERCEL CLOUD DEPLOYMENT</span>
-                            <span className="text-white font-bold">0 → 1 Shipped</span>
+                            <span className="text-white font-bold">Production Deployed</span>
                           </div>
                           <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div className="space-y-1">

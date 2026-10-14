@@ -342,14 +342,14 @@ export const projects: Project[] = [
     team: "Solo Full-Cycle Designer & Frontend Engineer",
     role: "Full-Cycle Product Designer & Frontend Engineer",
     client: "Eden & Blooms Event Decor Studio",
-    tags: ["0 → 1 Design", "Creative Engineering", "Next.js & Motion", "Live Production"],
-    metricsBadges: ["0 → 1 Custom Build", "Sub-second Vercel TTFB", "Interactive Gallery", "100% In Production"],
+    tags: ["Full-Cycle Design", "Creative Engineering", "Next.js & Motion", "Live Production"],
+    metricsBadges: ["Custom Build", "Sub-second Vercel TTFB", "Interactive Gallery", "100% In Production"],
     summary:
       "Full-cycle product design and frontend development for an event decor studio. Designed in Figma and built from scratch with Next.js, Tailwind CSS, and Framer Motion. Features interactive service showcases, organic balloon & floral gallery viewers, booking flows, and high-performance Vercel cloud deployment.",
     impactMetrics: [
       {
         label: "Delivery Architecture",
-        value: "0 → 1",
+        value: "Full Cycle",
         description: "Conceived in Figma, programmed from clean slate, deployed to Vercel.",
       },
       {
@@ -383,7 +383,7 @@ export const projects: Project[] = [
     },
     decisions: [
       {
-        title: "Bespoke 0 → 1 engineering over bloated website builders",
+        title: "Bespoke full-stack engineering over bloated website builders",
         rationale:
           "Pre-packaged templates carry immense JavaScript weight. Building from scratch with Next.js App Router, Tailwind, and Vercel Edge caching delivered an instant 60fps editorial browsing experience.",
         outcome: "Sub-second TTFB worldwide and a perfect 99 Lighthouse performance benchmark.",

@@ -5,7 +5,7 @@ export const siteConfig = {
   location: "Bengaluru, Karnataka, India",
   coordinates: "12.9716° N, 77.5946° E",
   email: "jerrymelvinj@gmail.com",
-  headline: "I design complex digital products 0 → 1",
+  headline: "I design complex digital products",
   subheadline:
     "Specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences.",
   biography:
@@ -20,7 +20,7 @@ export const siteConfig = {
     email: "mailto:jerrymelvinj@gmail.com",
   },
   skillsChips: [
-    "0 → 1 Architecture",
+    "Product Architecture",
     "E-Commerce Checkout",
     "Conversion Rate (CRO)",
     "Design Systems",
