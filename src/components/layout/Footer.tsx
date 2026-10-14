@@ -185,15 +185,15 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-4">
               <span>Jerry Melvin J &copy; {siteConfig.copyrightYear}</span>
               <span className="text-neutral-700 hidden sm:inline">&bull;</span>
+              <span className="text-neutral-600">All rights reserved</span>
+            </div>
+            <div>
               <Link
                 href="/blog"
                 className="text-neutral-400 hover:text-white transition-colors underline-offset-4 hover:underline"
               >
                 Blog / UX Teardowns
               </Link>
-            </div>
-            <div>
-              Inspired by xhulia.com &bull; Built with Next.js, Tailwind CSS, Lenis &amp; Framer Motion
             </div>
           </div>
         </div>
