@@ -3,7 +3,7 @@
 import * as React from "react";
 import { siteConfig } from "@/content/site-config";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -19,7 +19,7 @@ export function Hero() {
       opacity: 1,
       transition: {
         duration: 0.9,
-        ease: [0.16, 1, 0.3, 1], // Apple / Framer smooth deceleration
+        ease: [0.16, 1, 0.3, 1],
         delay: 0.15 + custom * 0.12,
       },
     }),
@@ -33,43 +33,35 @@ export function Hero() {
       transition: {
         duration: 0.8,
         ease: [0.16, 1, 0.3, 1],
-        delay: 0.55 + custom * 0.1,
+        delay: 0.45 + custom * 0.1,
       },
     }),
   };
 
-  // Interactive floating skills
-  const chips = siteConfig.skillsChips;
-
   return (
     <section
       id="hero"
-      className="relative min-h-[96vh] flex flex-col justify-between pt-32 sm:pt-40 pb-16 px-6 sm:px-8 lg:px-12 bg-black border-b border-neutral-800"
+      className="relative min-h-[90vh] flex flex-col justify-between pt-32 sm:pt-40 pb-16 px-6 sm:px-8 lg:px-12 bg-black border-b border-neutral-800"
     >
       <motion.div style={{ opacity, y }} className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
-        {/* Availability / Status ribbon */}
-        <motion.div
-          custom={0}
-          variants={fadeUpVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex items-center gap-3 pb-8"
-        >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-700 bg-neutral-900/80 text-xs font-mono text-neutral-300">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>{siteConfig.availabilityStatus}</span>
-          </span>
-          <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest hidden sm:inline-block">
-            {siteConfig.coordinates}
-          </span>
-        </motion.div>
+        {/* Semantic, High-Contrast Hero Headline (H1) */}
+        <div className="space-y-2 sm:space-y-3">
+          <div className="overflow-hidden">
+            <motion.div
+              custom={0}
+              variants={lineVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-500 block mb-3">
+                Product Designer &amp; UI/UX Specialist • Bengaluru, India
+              </span>
+            </motion.div>
+          </div>
 
-        {/* Massive Greeting & Typography Reveal */}
-        <div className="space-y-1 sm:space-y-2">
-          {/* Line 1 */}
           <div className="overflow-hidden">
             <motion.h1
-              custom={0}
+              custom={1}
               variants={lineVariants}
               initial="hidden"
               animate="visible"
@@ -79,29 +71,15 @@ export function Hero() {
             </motion.h1>
           </div>
 
-          {/* Line 2 */}
-          <div className="overflow-hidden">
-            <motion.h2
-              custom={1}
-              variants={lineVariants}
-              initial="hidden"
-              animate="visible"
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.75rem] font-black tracking-tighter uppercase text-white leading-[0.92]"
-            >
-              I Design Complex Digital
-            </motion.h2>
-          </div>
-
-          {/* Line 3 with high contrast highlight */}
           <div className="overflow-hidden">
             <motion.div
               custom={2}
               variants={lineVariants}
               initial="hidden"
               animate="visible"
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.75rem] font-black tracking-tighter uppercase text-neutral-400 leading-[0.92] flex items-center gap-4 flex-wrap"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight text-neutral-400 leading-[0.98]"
             >
-              <span className="text-white">Products 0 → 1.</span>
+              I design complex digital products.
             </motion.div>
           </div>
         </div>
@@ -116,7 +94,7 @@ export function Hero() {
             className="md:col-span-8 space-y-4"
           >
             <p className="text-lg sm:text-2xl text-neutral-300 font-normal leading-relaxed max-w-3xl">
-              Product Designer & UI/UX Specialist based in Bengaluru. Specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences.
+              Specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences.
             </p>
             <p className="text-sm sm:text-base text-neutral-500 font-normal leading-relaxed max-w-2xl font-mono">
               Proven commercial impact across Healthcare E-Commerce, Multi-Channel Auth, and Regional UAE Logistics.
@@ -146,43 +124,9 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        {/* Floating interactive tags / chips for skills */}
-        <motion.div
-          custom={5}
-          variants={fadeUpVariants}
-          initial="hidden"
-          animate="visible"
-          className="mt-12 pt-8 border-t border-neutral-800"
-        >
-          <div className="flex items-center justify-between pb-4">
-            <span className="text-xs uppercase font-mono tracking-widest text-neutral-500">
-              Interactive Skill Tags & Capabilities [Drag or Hover]
-            </span>
-            <span className="text-xs font-mono text-neutral-600 hidden sm:inline-block">
-              {chips.length} Core Competencies
-            </span>
-          </div>
-
-          <div className="flex flex-wrap gap-2.5 sm:gap-3">
-            {chips.map((chip, index) => (
-              <motion.div
-                key={chip}
-                drag
-                dragConstraints={{ left: -15, right: 15, top: -10, bottom: 10 }}
-                whileHover={{ scale: 1.08, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-neutral-800 bg-neutral-950 text-neutral-300 hover:text-black hover:bg-white hover:border-white transition-colors duration-200 cursor-grab active:cursor-grabbing select-none text-xs sm:text-sm font-mono"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 group-hover:bg-black" />
-                <span>{chip}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
 
-      {/* Bottom Proof Metric Strip */}
+      {/* Proof Metric Strip */}
       <div className="max-w-7xl mx-auto w-full mt-12 pt-6 border-t border-neutral-800/80 grid grid-cols-2 sm:grid-cols-4 gap-6">
         {siteConfig.stats.map((stat, i) => (
           <div key={i} className="space-y-1">

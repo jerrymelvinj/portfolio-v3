@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -24,11 +23,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://jerrymelvinj.com"),
   title: {
-    default: "Jerry Melvin J — Product Designer & UI/UX Specialist",
+    default: "Jerry Melvin J | Product Designer & UI/UX Specialist",
     template: "%s | Jerry Melvin J",
   },
   description:
-    "Jerry Melvin J is a Product Designer & UI/UX Specialist based in Bengaluru, specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences 0 → 1.",
+    "Jerry Melvin J is a Product Designer & UI/UX Specialist based in Bengaluru, crafting human-centered digital experiences, e-commerce checkout architecture, and scalable design systems.",
   keywords: [
     "Jerry Melvin J",
     "Product Designer",
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "Jerry Melvin J — Product Designer Portfolio",
     title: "Jerry Melvin J — Product Designer & UI/UX Specialist",
     description:
-      "Crafting high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences 0 → 1.",
+      "Crafting high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences.",
     images: [
       {
         url: "/og-image.png",
@@ -75,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jerry Melvin J — Product Designer & UI/UX Specialist",
     description:
-      "Crafting high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences 0 → 1.",
+      "Crafting high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences.",
     creator: "@jerrymelvinjm",
     images: ["/og-image.png"],
   },
@@ -106,7 +105,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-black text-white font-sans antialiased flex flex-col justify-between selection:bg-white selection:text-black">
         <SmoothScrollProvider>
-          <CustomCursor />
           <Navbar />
           <main className="flex-1 w-full">{children}</main>
           <Footer />

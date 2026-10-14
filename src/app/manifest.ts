@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Jerry Melvin J — Product Designer & UI/UX Specialist",
     short_name: "Jerry Melvin J",
     description:
-      "Product Designer based in Bengaluru specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences 0 → 1.",
+      "Product Designer based in Bengaluru specializing in high-conversion e-commerce checkout architecture, scalable design systems, and human-centered digital experiences.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

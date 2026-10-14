@@ -89,7 +89,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed font-mono">
-              Product Designer &amp; UI/UX Specialist crafting human-centered digital experiences 0 → 1.
+              Product Designer &amp; UI/UX Specialist crafting human-centered digital experiences.
             </p>
             <div className="flex items-center gap-1.5 text-xs font-mono text-neutral-500">
               <MapPin className="w-3.5 h-3.5 text-neutral-400" />
