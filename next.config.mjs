@@ -37,6 +37,19 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // 0. Canonical Domain Enforcement: Redirect www to apex (https://jerrymelvinj.com)
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.jerrymelvinj.com",
+          },
+        ],
+        destination: "https://jerrymelvinj.com/:path*",
+        statusCode: 301,
+      },
+
       // 1. E-Commerce Checkout Architecture
       {
         source: "/work/omron",
