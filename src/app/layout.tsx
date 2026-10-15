@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jerrymelvinj.com"),
+  metadataBase: new URL("https://www.jerrymelvinj.com"),
   title: {
     default: "Jerry Melvin J | Product Designer & UI/UX Specialist",
     template: "%s | Jerry Melvin J",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "Next.js Portfolio",
     "xhulia.com inspired portfolio",
   ],
-  authors: [{ name: "Jerry Melvin J", url: "https://jerrymelvinj.com" }],
+  authors: [{ name: "Jerry Melvin J", url: "https://www.jerrymelvinj.com" }],
   creator: "Jerry Melvin J",
   publisher: "Jerry Melvin J",
   formatDetection: {
@@ -51,12 +51,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://www.jerrymelvinj.com/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jerrymelvinj.com",
+    url: "https://www.jerrymelvinj.com",
     siteName: "Jerry Melvin J — Product Designer Portfolio",
     title: "Jerry Melvin J — Product Designer & UI/UX Specialist",
     description:

@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${project.title} | Case Study by Jerry Melvin J`;
   const description = project.summary;
-  const url = `https://jerrymelvinj.com/work/${project.slug}`;
+  const url = `https://www.jerrymelvinj.com/work/${project.slug}`;
 
   return {
     title,
@@ -112,7 +112,7 @@ export default async function CaseStudyPage({ params }: Props) {
     author: {
       "@type": "Person",
       name: siteConfig.name,
-      url: "https://jerrymelvinj.com",
+      url: "https://www.jerrymelvinj.com",
     },
     publisher: {
       "@type": "Person",

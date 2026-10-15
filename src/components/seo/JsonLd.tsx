@@ -9,7 +9,7 @@ export function JsonLd() {
     name: "Jerry Melvin J",
     jobTitle: "Product Designer / UI/UX Specialist",
     description: "Product Designer and UI/UX Specialist based in Bengaluru, specializing in high-conversion e-commerce checkout architecture and scalable design systems.",
-    url: "https://jerrymelvinj.com",
+    url: siteConfig.url,
     email: siteConfig.email,
     sameAs: [
       siteConfig.socials.linkedin,
@@ -59,7 +59,7 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: `${siteConfig.name} — Product Designer Portfolio`,
-    url: "https://jerrymelvinj.com",
+    url: siteConfig.url,
     description: siteConfig.subheadline,
     author: {
       "@type": "Person",
@@ -72,19 +72,19 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Selected Product Design & Architecture Case Studies | Jerry Melvin J",
-    url: "https://jerrymelvinj.com/#work",
+    url: `${siteConfig.url}/#work`,
     description: "Detailed case studies on e-commerce checkout overhauls, multi-channel authentication, geospatial address infrastructure, and high-performance production design systems.",
     isPartOf: {
       "@type": "WebSite",
       name: `${siteConfig.name} — Product Designer Portfolio`,
-      url: "https://jerrymelvinj.com",
+      url: siteConfig.url,
     },
     hasPart: projects.map((p) => ({
       "@type": "CreativeWork",
       name: p.title,
       headline: p.title,
       description: p.summary,
-      url: `https://jerrymelvinj.com/work/${p.slug}`,
+      url: `${siteConfig.url}/work/${p.slug}`,
       author: {
         "@type": "Person",
         name: siteConfig.name,

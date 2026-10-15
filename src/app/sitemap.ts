@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jerrymelvinj.com";
+  const baseUrl = "https://www.jerrymelvinj.com";
   const currentDate = new Date();
 
   // Root pages

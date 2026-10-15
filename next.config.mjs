@@ -37,16 +37,16 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // 0. Canonical Domain Enforcement: Redirect www to apex (https://jerrymelvinj.com)
+      // 0. Canonical Domain Enforcement: Redirect apex to www (https://www.jerrymelvinj.com)
       {
         source: "/:path*",
         has: [
           {
             type: "host",
-            value: "www.jerrymelvinj.com",
+            value: "jerrymelvinj.com",
           },
         ],
-        destination: "https://jerrymelvinj.com/:path*",
+        destination: "https://www.jerrymelvinj.com/:path*",
         statusCode: 301,
       },
 

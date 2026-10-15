@@ -4,10 +4,10 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
 
-  // If request arrives with www., 301-redirect to apex domain (https://jerrymelvinj.com)
-  if (host.startsWith("www.jerrymelvinj.com")) {
+  // Enforce Canonical www Domain: If request arrives without www., 301-redirect to https://www.jerrymelvinj.com
+  if (host === "jerrymelvinj.com") {
     const { pathname, search } = request.nextUrl;
-    return NextResponse.redirect(`https://jerrymelvinj.com${pathname}${search}`, 301);
+    return NextResponse.redirect(`https://www.jerrymelvinj.com${pathname}${search}`, 301);
   }
 
   return NextResponse.next();

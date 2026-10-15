@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   description:
     "Analytical teardowns and essays on e-commerce UX architecture, cognitive biases, dark patterns, and scalable design systems by Jerry Melvin J.",
   alternates: {
-    canonical: "https://jerrymelvinj.com/blog",
+    canonical: "https://www.jerrymelvinj.com/blog",
   },
   openGraph: {
     type: "website",
     title: "UX Writing & Product Thinking | Jerry Melvin J",
     description:
       "Analytical teardowns and essays on e-commerce UX architecture, cognitive biases, dark patterns, and scalable design systems by Jerry Melvin J.",
-    url: "https://jerrymelvinj.com/blog",
+    url: "https://www.jerrymelvinj.com/blog",
     siteName: "Jerry Melvin J — Product Designer Portfolio",
     images: [
       {
@@ -54,11 +54,11 @@ export default function BlogListingPage() {
     name: "Jerry Melvin J — UX Writing & Product Thinking",
     description:
       "Analytical teardowns and essays on e-commerce UX architecture, cognitive biases, dark patterns, and scalable design systems.",
-    url: "https://jerrymelvinj.com/blog",
+    url: "https://www.jerrymelvinj.com/blog",
     author: {
       "@type": "Person",
       name: siteConfig.name,
-      url: "https://jerrymelvinj.com",
+      url: "https://www.jerrymelvinj.com",
     },
     blogPost: blogPosts.map((post) => ({
       "@type": "BlogPosting",

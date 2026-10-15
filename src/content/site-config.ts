@@ -12,7 +12,7 @@ export const siteConfig = {
     "I'm Jerry Melvin. A product designer and frontend developer based in Bengaluru. I don't always know where a design is going when I start, but somewhere in the middle, it finds its shape. That's the part I live for. Learned design systems first, the boring but necessary kind, then slowly started understanding when to break them. Over time, I found myself designing and building together, not separately. One fed the other.",
   availabilityStatus: "Available for Q4/2026 Products & Consulting",
   copyrightYear: 2026,
-  url: "https://jerrymelvinj.com",
+  url: "https://www.jerrymelvinj.com",
   socials: {
     linkedin: "https://www.linkedin.com/in/jerrymelvinjm/",
     github: "https://github.com/jerrymelvinj",
