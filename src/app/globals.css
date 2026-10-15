@@ -91,6 +91,28 @@
   animation-play-state: paused;
 }
 
+/* Horizontal infinite auto-scroll loop for mobile capabilities */
+@keyframes marquee-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-horizontal {
+  display: flex;
+  width: max-content;
+  animation: marquee-horizontal 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-horizontal:hover,
+.animate-marquee-horizontal:active {
+  animation-play-state: paused;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
