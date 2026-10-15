@@ -8,37 +8,55 @@ import Link from "next/link";
 
 export function CaseStudies() {
   return (
-    <section id="work" className="py-24 px-6 sm:px-8 lg:px-12 bg-black">
-      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24">
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-neutral-800 pb-8">
-          <div className="space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
-              Selected Case Studies &amp; Product Architecture
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
-              E-Commerce UX Case Studies &amp; Architecture.
-            </h2>
+    <section id="work" className="py-16 sm:py-24 px-6 sm:px-8 lg:px-12 bg-black relative">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header Partition — Stays still at top on desktop */}
+        <div className="lg:sticky lg:top-20 z-30 bg-black/95 backdrop-blur-md pt-4 pb-6 border-b border-neutral-800 mb-10 sm:mb-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+            <div className="space-y-2">
+              <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block">
+                Selected Case Studies &amp; Product Architecture
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-none">
+                E-Commerce UX Case Studies &amp; Architecture.
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm font-mono text-neutral-400 max-w-md leading-relaxed">
+              Decoupling complexity in e-commerce checkout flows, regional address infrastructure, and enterprise design systems.
+            </p>
           </div>
-          <p className="text-sm font-mono text-neutral-400 max-w-md">
-            Decoupling complexity in e-commerce checkout flows, regional address infrastructure, and enterprise design systems.
-          </p>
         </div>
 
-        {/* Project List */}
-        <div className="space-y-28">
+        {/* Stacking Case Studies Container */}
+        <div className="relative">
           {projects.map((project, index) => {
             const projectNumber = String(index + 1).padStart(2, "0");
             const totalProjects = String(projects.length).padStart(2, "0");
+            const isLast = index === projects.length - 1;
+
+            // Distinct, opaque solid luxury dark background for each card overlay
+            const solidBackgrounds = [
+              "bg-[#0a0a0a]",
+              "bg-[#0d0d0d]",
+              "bg-[#0b0b0b]",
+              "bg-[#0f0f0f]",
+            ];
+            const solidBg = solidBackgrounds[index % solidBackgrounds.length];
 
             return (
               <motion.article
                 key={project.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.12 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="group border-b border-neutral-800 pb-24 transform-gpu"
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
+                style={{
+                  top: `calc(190px + ${index * 12}px)`,
+                  zIndex: 10 + index,
+                }}
+                className={`group rounded-2xl sm:rounded-3xl border border-neutral-800/90 ${solidBg} p-6 sm:p-8 lg:p-10 shadow-[0_-20px_50px_rgba(0,0,0,0.95)] transform-gpu transition-all lg:sticky ${
+                  isLast ? "mb-0" : "mb-16 lg:mb-40"
+                }`}
               >
                 {/* Project Header Row */}
                 <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-neutral-400 pb-6 border-b border-neutral-900">
