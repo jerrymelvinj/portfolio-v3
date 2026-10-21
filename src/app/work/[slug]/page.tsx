@@ -19,6 +19,7 @@ import {
   Activity,
 } from "lucide-react";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
+import { OmronBrandshopCaseStudy } from "@/components/case-studies/OmronBrandshopCaseStudy";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -122,6 +123,25 @@ export default async function CaseStudyPage({ params }: Props) {
     inLanguage: "en-US",
     keywords: project.tags.join(", "),
   };
+
+  // Specialized comprehensive retrospective for OMRON Brandshop flagship project
+  if (project.id === "omron-checkout" || project.slug === "ecommerce-checkout-architecture") {
+    return (
+      <>
+        {/* JSON-LD for rich snippet SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }}
+        />
+        <OmronBrandshopCaseStudy
+          project={project}
+          nextProject={nextProject}
+          projectNumber={projectNumber}
+          totalProjects={totalProjects}
+        />
+      </>
+    );
+  }
 
   return (
     <article className="min-h-screen bg-black text-white pt-24 sm:pt-32 pb-24">

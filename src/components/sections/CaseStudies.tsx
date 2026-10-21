@@ -129,32 +129,38 @@ export function CaseStudies() {
                     {/* Central Schematic Diagram Placeholder */}
                     <div className="my-auto py-3">
                       {index === 0 && (
-                        /* OMRON Checkout Funnel Simulation */
+                        /* OMRON Brandshop End-to-End Shopping Journey */
                         <div className="space-y-4">
                           <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pb-2 border-b border-neutral-800">
-                            <span>MILESTONE PROGRESSION ENGINE</span>
-                            <span className="text-white font-bold">Surge: 30x Velocity</span>
+                            <span>END-TO-END SHOPPING JOURNEY</span>
+                            <span className="text-white font-bold">PLP → Evaluation → Pay</span>
                           </div>
-                          <div className="grid grid-cols-3 gap-3">
-                            <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
-                              <span className="text-[10px] font-mono text-neutral-500 uppercase">Step 01</span>
-                              <div className="text-sm font-bold text-white">Biometric Auth</div>
-                              <div className="text-xs text-neutral-400">Zero-Password Passkeys</div>
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                            <div className="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
+                              <span className="text-[10px] font-mono text-neutral-500 uppercase">Stage 01</span>
+                              <div className="text-xs font-bold text-white">Discovery (PLP)</div>
+                              <div className="text-[11px] text-neutral-400">Hierarchy & Filters</div>
                             </div>
-                            <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
-                              <span className="text-[10px] font-mono text-neutral-500 uppercase">Step 02</span>
-                              <div className="text-sm font-bold text-white">Milestone Gamification</div>
-                              <div className="text-xs text-neutral-400">Free Express Delivery</div>
+                            <div className="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
+                              <span className="text-[10px] font-mono text-neutral-500 uppercase">Stage 02</span>
+                              <div className="text-xs font-bold text-white">Evaluation (PDP)</div>
+                              <div className="text-[11px] text-neutral-400">Clinical Specs & Cross-sell</div>
                             </div>
-                            <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-700 space-y-1">
-                              <span className="text-[10px] font-mono text-neutral-400 uppercase">Step 03</span>
-                              <div className="text-sm font-bold text-white">Instant UPI / Pay</div>
-                              <div className="text-xs text-white font-bold">1-Click Purchase</div>
+                            <div className="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
+                              <span className="text-[10px] font-mono text-neutral-500 uppercase">Stage 03</span>
+                              <div className="text-xs font-bold text-white">Cart & Shipping</div>
+                              <div className="text-[11px] text-neutral-400">Fee Clarity & Context</div>
+                            </div>
+                            <div className="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
+                              <span className="text-[10px] font-mono text-neutral-500 uppercase">Stage 04</span>
+                              <div className="text-xs font-bold text-white">Payment & Recovery</div>
+                              <div className="text-[11px] text-neutral-400">State Machine Handling</div>
                             </div>
                           </div>
-                          {/* Progress bar visual */}
-                          <div className="w-full bg-neutral-800 h-2 rounded-full overflow-hidden mt-3">
-                            <div className="bg-white h-full w-[94%]" />
+                          {/* Review tiers visual */}
+                          <div className="p-2.5 rounded-lg bg-neutral-950/80 border border-neutral-800/80 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+                            <span>3-Tier Review Cycle:</span>
+                            <span className="text-white">India Team → US Stakeholders → Japan Design System</span>
                           </div>
                         </div>
                       )}
@@ -269,7 +275,7 @@ export function CaseStudies() {
                         </p>
                       </div>
                       <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
-                        Validated via Production Telemetry
+                        {index === 0 ? "Documented Design Retrospective" : "Validated via Production Telemetry"}
                       </div>
                     </div>
 
