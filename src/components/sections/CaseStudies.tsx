@@ -1,12 +1,15 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import { projects } from "@/content/projects";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, Layers, Cpu, Compass, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 
 export function CaseStudies() {
+  const router = useRouter();
+
   return (
     <section id="work" className="py-16 sm:py-24 px-6 sm:px-8 lg:px-12 bg-black relative">
       <div className="max-w-7xl mx-auto">
@@ -54,7 +57,14 @@ export function CaseStudies() {
                   top: `calc(84px + ${index * 8}px)`,
                   zIndex: 10 + index,
                 }}
-                className={`group rounded-2xl sm:rounded-3xl border border-neutral-800/90 ${solidBg} p-5 sm:p-7 lg:p-7 shadow-[0_-20px_50px_rgba(0,0,0,0.95)] transform-gpu transition-all lg:sticky ${
+                onClick={(e) => {
+                  const target = e.target as HTMLElement;
+                  if (target.closest('a[target="_blank"]') || target.closest('button')) {
+                    return;
+                  }
+                  router.push(`/work/${project.slug}`);
+                }}
+                className={`group relative rounded-2xl sm:rounded-3xl border border-neutral-800/90 ${solidBg} p-5 sm:p-7 lg:p-7 shadow-[0_-20px_50px_rgba(0,0,0,0.95)] transform-gpu transition-all hover:border-neutral-700 cursor-pointer lg:sticky ${
                   isLast ? "mb-0" : "mb-16 lg:mb-36"
                 }`}
               >
@@ -80,15 +90,17 @@ export function CaseStudies() {
                 {/* Project Main Details */}
                 <div className="mt-4 sm:mt-5 grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
                   <div className="lg:col-span-8 space-y-3">
-                    <Link
-                      href={`/work/${project.slug}`}
-                      className="group/title inline-flex items-start gap-3"
-                    >
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-tight group-hover/title:text-neutral-300 transition-colors">
-                        {project.title}
+                    <div className="group/title inline-flex items-start gap-3">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-tight group-hover:text-neutral-300 transition-colors">
+                        <Link
+                          href={`/work/${project.slug}`}
+                          className="after:absolute after:inset-0 after:z-10 focus:outline-none"
+                        >
+                          {project.title}
+                        </Link>
                       </h3>
-                      <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-500 group-hover/title:text-white group-hover/title:translate-x-1 group-hover/title:-translate-y-1 transition-all shrink-0 mt-0.5" />
-                    </Link>
+                      <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-500 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0 mt-0.5" />
+                    </div>
                     <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal max-w-3xl">
                       {project.summary}
                     </p>
@@ -109,8 +121,8 @@ export function CaseStudies() {
 
                 {/* Bento-Box Style Visual Grid */}
                 <div className="mt-4 sm:mt-5 grid grid-cols-1 md:grid-cols-12 gap-3.5">
-                  {/* Primary Large Showcase Area (8 cols) */}
-                  <div className="md:col-span-8 bg-neutral-900/60 border border-neutral-800/90 rounded-2xl p-4 sm:p-5 flex flex-col justify-between min-h-[250px] sm:min-h-[280px] relative overflow-hidden group-hover:border-neutral-700 transition-colors">
+                  {/* Primary Large Showcase Area (8 cols) — Hidden on mobile to avoid cognitive overload */}
+                  <div className="hidden md:flex md:col-span-8 bg-neutral-900/60 border border-neutral-800/90 rounded-2xl p-4 sm:p-5 flex-col justify-between min-h-[250px] sm:min-h-[280px] relative overflow-hidden group-hover:border-neutral-700 transition-colors">
                     {/* Simulated App / Canvas Bar */}
                     <div className="flex items-center justify-between pb-3 border-b border-neutral-800/80">
                       <div className="flex items-center gap-2">
@@ -225,7 +237,8 @@ export function CaseStudies() {
                                 href={project.liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black text-xs font-mono font-bold uppercase rounded hover:bg-neutral-200 transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                                className="relative z-20 inline-flex items-center gap-2 px-4 py-2 bg-white text-black text-xs font-mono font-bold uppercase rounded hover:bg-neutral-200 transition-colors"
                               >
                                 <span>Live Production ↗</span>
                               </a>
@@ -246,24 +259,27 @@ export function CaseStudies() {
                           </span>
                         ))}
                       </div>
-                      <Link
-                        href={`/work/${project.slug}`}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-neutral-700 bg-black text-white hover:bg-white hover:text-black hover:border-white transition-all text-xs font-mono font-bold uppercase tracking-wider"
-                      >
+                      <span className="relative z-20 inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-neutral-700 bg-black text-white group-hover:bg-white group-hover:text-black group-hover:border-white transition-all text-xs font-mono font-bold uppercase tracking-wider">
                         <span>Case Study</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
-                      </Link>
+                      </span>
                     </div>
                   </div>
 
                   {/* Secondary Bento Grid Tiles (4 cols) */}
                   <div className="md:col-span-4 flex flex-col gap-3.5">
-                    {/* Bento Tile 1: Primary Metric Highlight */}
+                    {/* Bento Tile 1: Primary Metric Highlight — Kept on mobile & desktop */}
                     <div className="bg-neutral-900/60 border border-neutral-800/90 rounded-2xl p-4 sm:p-5 flex-1 flex flex-col justify-between group-hover:border-neutral-700 transition-colors">
-                      <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
-                        Primary Impact Metric
-                      </span>
-                      <div className="py-2.5 space-y-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+                          Primary Impact Metric
+                        </span>
+                        <span className="md:hidden text-xs font-mono text-white font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                          <span>View Case Study</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                      <div className="py-2.5 sm:py-3 space-y-1">
                         <div className="text-3xl sm:text-4xl font-black font-mono tracking-tight text-white">
                           {project.impactMetrics[0]?.value}
                         </div>
@@ -274,13 +290,13 @@ export function CaseStudies() {
                           {project.impactMetrics[0]?.description}
                         </p>
                       </div>
-                      <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+                      <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider pt-2 border-t border-neutral-800/60">
                         {index === 0 ? "Documented Design Retrospective" : "Validated via Production Telemetry"}
                       </div>
                     </div>
 
-                    {/* Bento Tile 2: Tech & Stack Specs */}
-                    <div className="bg-neutral-900/60 border border-neutral-800/90 rounded-2xl p-4 sm:p-5 flex flex-col justify-between group-hover:border-neutral-700 transition-colors">
+                    {/* Bento Tile 2: Tech & Stack Specs — Hidden on mobile per user request */}
+                    <div className="hidden md:flex bg-neutral-900/60 border border-neutral-800/90 rounded-2xl p-4 sm:p-5 flex-col justify-between group-hover:border-neutral-700 transition-colors">
                       <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 pb-2 block">
                         Architecture Stack
                       </span>
