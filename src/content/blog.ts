@@ -15,10 +15,36 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "triumph-motorcycle-ux-friction",
+    slug: "from-showrooms-to-screens-what-a-triumph-motorcycle-test-drive-taught-me-about-ux-friction",
+    title:
+      "From Showrooms to Screens: What a Triumph Motorcycle Test Drive Taught Me About UX Friction",
+    subtitle:
+      "Customer Effort Score (CES), Anticipatory Design, and Applying Physical Service Lessons to Digital Products",
+    publishedAt: "October 2026",
+    readTime: "5 min read",
+    category: "Service Design & CX",
+    summary:
+      "We often discuss UX as if it only exists behind glass screens. But after a recent test ride at a Triumph Motorcycles showroom, a 5-minute sales intervention became a masterclass in friction removal, Customer Effort Score (CES), and anticipatory empathy.",
+    tags: [
+      "Service Design",
+      "Customer Experience",
+      "UX Teardown",
+      "Product Design",
+      "Behavioral Psychology",
+    ],
+    externalUrl:
+      "https://jerrymelvinj.medium.com/from-showrooms-to-screens-what-a-triumph-motorcycle-test-drive-taught-me-about-ux-friction-16bbbb627a44",
+    coverImage: "https://cdn-images-1.medium.com/max/1024/0*9ELYGcas8xStuLcH",
+    platform: "Medium",
+  },
+  {
     id: "ux-of-deception-lenskart-bogo",
     slug: "the-ux-of-deception-unpacking",
-    title: "The UX of Deception: Unpacking the Psychology Behind Lenskart’s BOGO Illusion",
-    subtitle: "Cognitive Biases, Price Anchoring, and the Mechanics of Manufactured Urgency",
+    title:
+      "The UX of Deception: Unpacking the Psychology Behind Lenskart’s BOGO Illusion",
+    subtitle:
+      "Cognitive Biases, Price Anchoring, and the Mechanics of Manufactured Urgency",
     publishedAt: "October 2026",
     readTime: "6 min read",
     category: "UX Teardown & CRO Psychology",

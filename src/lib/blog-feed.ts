@@ -15,6 +15,7 @@ export interface FeedBlogPost {
   mediumUrl?: string;
   coverImage?: string;
   platform: "Blogger" | "Medium" | "Blogger & Medium" | "Substack";
+  timestamp?: number;
 }
 
 function cleanHtml(raw: string): string {
@@ -28,6 +29,18 @@ function cleanHtml(raw: string): string {
     .replace(/&gt;/g, ">")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function formatTag(tag: string): string {
+  const trimmed = tag.trim();
+  if (!trimmed) return "";
+  if (trimmed.toLowerCase() === "ux-teardown" || trimmed.toLowerCase() === "ux teardown") return "UX Teardown";
+  if (trimmed.toLowerCase() === "cro") return "CRO";
+  if (trimmed.toLowerCase() === "cx") return "CX";
+  return trimmed
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
 }
 
 function slugify(title: string): string {
@@ -67,7 +80,7 @@ async function fetchBloggerPosts(): Promise<FeedBlogPost[]> {
         entry.link?.find((l: any) => l.rel === "alternate")?.href || "";
       const published = entry.published?.$t || "";
       const categories: string[] = (entry.category || []).map(
-        (c: any) => c.term
+        (c: any) => formatTag(c.term)
       );
 
       let coverImage = entry.media$thumbnail?.url || "";
@@ -110,6 +123,7 @@ async function fetchBloggerPosts(): Promise<FeedBlogPost[]> {
         bloggerUrl: altLink,
         coverImage: coverImage || undefined,
         platform: "Blogger",
+        timestamp: dateObj.getTime(),
       };
     });
   } catch (err) {
@@ -161,7 +175,8 @@ async function fetchMediumPosts(): Promise<FeedBlogPost[]> {
       const catRegex = /<category><!\[CDATA\[([\s\S]*?)\]\]><\/category>/g;
       let catMatch;
       while ((catMatch = catRegex.exec(block)) !== null) {
-        categories.push(cleanHtml(catMatch[1]));
+        const formatted = formatTag(cleanHtml(catMatch[1]));
+        if (formatted) categories.push(formatted);
       }
 
       const dateObj = pubDateMatch ? new Date(pubDateMatch[1]) : new Date();
@@ -194,6 +209,7 @@ async function fetchMediumPosts(): Promise<FeedBlogPost[]> {
         mediumUrl: cleanLink,
         coverImage: coverImage || undefined,
         platform: "Medium",
+        timestamp: dateObj.getTime(),
       });
     }
 
@@ -218,6 +234,7 @@ export async function getLiveBlogPosts(): Promise<FeedBlogPost[]> {
         ...p,
         bloggerUrl: p.platform === "Blogger" ? p.externalUrl : undefined,
         mediumUrl: p.platform === "Medium" ? p.externalUrl : undefined,
+        timestamp: new Date(p.publishedAt).getTime(),
       }));
     }
 
@@ -251,13 +268,16 @@ export async function getLiveBlogPosts(): Promise<FeedBlogPost[]> {
       }
     }
 
-    return Array.from(mergedMap.values());
+    const postsArray = Array.from(mergedMap.values());
+    postsArray.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+    return postsArray;
   } catch (err) {
     console.error("Error unifying blog posts:", err);
     return fallbackPosts.map((p) => ({
       ...p,
       bloggerUrl: p.platform === "Blogger" ? p.externalUrl : undefined,
       mediumUrl: p.platform === "Medium" ? p.externalUrl : undefined,
+      timestamp: new Date(p.publishedAt).getTime(),
     }));
   }
 }
