@@ -146,12 +146,21 @@ export function Footer() {
                 <Instagram className="w-3.5 h-3.5" />
                 <span>Instagram ↗</span>
               </a>
+              <a
+                href={siteConfig.socials.medium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2"
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>Medium Publications ↗</span>
+              </a>
               <Link
                 href="/blog"
                 className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2 pt-1 border-t border-neutral-900"
               >
                 <BookOpen className="w-3.5 h-3.5 text-neutral-400" />
-                <span>Blog &amp; Essays ↗</span>
+                <span>Blog &amp; Essays (Live) ↗</span>
               </Link>
             </div>
           </div>

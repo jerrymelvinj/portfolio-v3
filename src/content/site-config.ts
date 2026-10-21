@@ -18,6 +18,8 @@ export const siteConfig = {
     github: "https://github.com/jerrymelvinj",
     instagram: "https://www.instagram.com/jerrymelvinjm/",
     youtube: "https://www.youtube.com/@jerrymelvinj",
+    medium: "https://medium.com/@jerrymelvinj",
+    blogger: "https://jerrymelvinj.blogspot.com",
     email: "mailto:jerrymelvinj@gmail.com",
   },
   skillsChips: [
