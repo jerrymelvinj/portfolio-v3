@@ -56,7 +56,7 @@ export const projects: Project[] = [
     },
     decisions: [
       {
-        title: "Balancing Homepage Real Estate: Trust Signals vs. Product Discovery",
+        title: "Balancing Homepage Layout: Trust Signals vs. Product Discovery",
         rationale:
           "Stakeholders required prominent USP credibility banners after the hero, while UX best practices demanded fast access to the catalog. Negotiated a compact, integrated 3-pillar trust strip nestled directly beneath the hero, allowing immediate category discovery.",
         outcome: "Satisfied business need for official brand credibility without introducing catalog discovery friction.",

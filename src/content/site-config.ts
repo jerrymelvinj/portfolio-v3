@@ -37,9 +37,9 @@ export const siteConfig = {
     "Figma & Design Tokens",
   ],
   stats: [
-    { label: "Purchase Velocity Surge", value: "30x" },
-    { label: "Onboarding Latency Reduced", value: "-78%" },
-    { label: "Delivery Precision Lift", value: "94.2%" },
+    { label: "Design Systems & Architecture", value: "4+ Yrs" },
+    { label: "Multi-Regional Reviews", value: "IN • US • JP" },
+    { label: "Full Funnel Scope", value: "PLP → Pay" },
     { label: "Accessibility Benchmark", value: "WCAG AAA" },
   ],
 };

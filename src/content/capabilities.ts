@@ -7,10 +7,10 @@ export const capabilities: Capability[] = [
     category: "Revenue & Growth",
     iconName: "TrendingUp",
     description:
-      "Transforming high-friction checkout funnels, cart loops, and product display pages into ultra-fast, high-converting purchasing engines with gamified incentives.",
+      "Transforming high-friction checkout funnels, cart loops, and product display pages into seamless, high-converting purchasing experiences with clear value incentives.",
     skills: [
       "Checkout Flow Simplification",
-      "Cart Gamification & Upsells",
+      "Cart Optimization & Cross-Sells",
       "A/B & Multivariate Testing",
       "Funnel Drop-off Analysis",
       "Mobile-First Commerce UX",

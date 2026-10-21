@@ -738,7 +738,7 @@ export function OmronBrandshopCaseStudy({
                   <span>Stakeholder / Business Preference</span>
                 </div>
                 <p className="text-xs sm:text-sm font-mono text-neutral-300 leading-relaxed">
-                  Stakeholders strongly preferred allocating substantial above-the-fold real estate immediately after the hero banner to a comprehensive <strong>USP &amp; Brand Trust section</strong> (highlighting official brandshop authenticity, warranty backing, and medical certification).
+                  Stakeholders strongly preferred allocating prominent above-the-fold screen space immediately after the hero banner to a comprehensive <strong>USP &amp; Brand Trust section</strong> (highlighting official brandshop authenticity, warranty backing, and medical certification).
                 </p>
                 <div className="text-[11px] font-mono text-neutral-500">
                   <strong>Business Goal:</strong> Reassure first-time shoppers who might be skeptical of third-party sellers by immediately emphasizing that this is OMRON’s official direct store.
