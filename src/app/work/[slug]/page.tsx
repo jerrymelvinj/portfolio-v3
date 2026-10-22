@@ -90,6 +90,165 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Build tailored Schema.org Article JSON-LD for rich snippets
+function getCaseStudySchema(project: NonNullable<ReturnType<typeof findProject>>) {
+  const canonicalSlug = project.slug;
+
+  if (canonicalSlug === "ecommerce-checkout-architecture" || project.id === "omron-checkout") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.jerrymelvinj.com/work/ecommerce-checkout-architecture#article",
+      isPartOf: {
+        "@type": "WebPage",
+        "@id": "https://www.jerrymelvinj.com/work/ecommerce-checkout-architecture",
+      },
+      headline: "E-Commerce Checkout Architecture: High-Conversion UX & System Optimization",
+      description:
+        "A comprehensive UI/UX case study detailing checkout flow simplification, drop-off reduction, and multi-regional transaction architecture.",
+      url: "https://www.jerrymelvinj.com/work/ecommerce-checkout-architecture",
+      author: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      publisher: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      inLanguage: "en-US",
+      about: [
+        "Checkout Flow UX",
+        "Conversion Rate Optimization",
+        "E-Commerce Architecture",
+      ],
+    };
+  }
+
+  if (canonicalSlug === "gulf-ecommerce-logistics-ux" || project.id === "gulf-logistics") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.jerrymelvinj.com/work/gulf-ecommerce-logistics-ux#article",
+      isPartOf: {
+        "@type": "WebPage",
+        "@id": "https://www.jerrymelvinj.com/work/gulf-ecommerce-logistics-ux",
+      },
+      headline: "Gulf E-Commerce Logistics UX: Localized Delivery & Tracking Architecture",
+      description:
+        "A deep dive into localized cross-border delivery flows, dynamic address resolution, and order tracking UX across Gulf e-commerce ecosystems.",
+      url: "https://www.jerrymelvinj.com/work/gulf-ecommerce-logistics-ux",
+      author: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      publisher: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      inLanguage: "en-US",
+      about: [
+        "Logistics UX",
+        "Cross-Border E-Commerce",
+        "Localized Product Strategy",
+      ],
+    };
+  }
+
+  if (canonicalSlug === "event-decor-studio-experience" || project.id === "eden-blooms") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.jerrymelvinj.com/work/event-decor-studio-experience#article",
+      isPartOf: {
+        "@type": "WebPage",
+        "@id": "https://www.jerrymelvinj.com/work/event-decor-studio-experience",
+      },
+      headline: "Event Decor Studio Experience: Interactive Client Journey & Booking UX",
+      description:
+        "Designing a high-end visual discovery and consultative booking interface for an event decor studio, transforming fragmented inquiries into structured bookings.",
+      url: "https://www.jerrymelvinj.com/work/event-decor-studio-experience",
+      author: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      publisher: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      inLanguage: "en-US",
+      about: [
+        "Interactive UI/UX",
+        "Service Booking Flow",
+        "Visual Discovery",
+      ],
+    };
+  }
+
+  if (canonicalSlug === "multichannel-identity-architecture" || project.id === "omron-identity") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.jerrymelvinj.com/work/multichannel-identity-architecture#article",
+      isPartOf: {
+        "@type": "WebPage",
+        "@id": "https://www.jerrymelvinj.com/work/multichannel-identity-architecture",
+      },
+      headline: "Eliminating Onboarding Friction via Multi-Channel Identity Architecture",
+      description:
+        "Architected a frictionless multi-channel identity system decoupling traditional account creation barriers from the purchase journey, reducing onboarding latency by 78%.",
+      url: "https://www.jerrymelvinj.com/work/multichannel-identity-architecture",
+      author: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      publisher: {
+        "@type": "Person",
+        name: "Jerry Melvin J",
+        url: "https://www.jerrymelvinj.com/",
+      },
+      inLanguage: "en-US",
+      about: [
+        "Multi-Channel Auth",
+        "Identity UX",
+        "WCAG 2.1 AAA",
+        "Design Systems",
+      ],
+    };
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `https://www.jerrymelvinj.com/work/${canonicalSlug}#article`,
+    isPartOf: {
+      "@type": "WebPage",
+      "@id": `https://www.jerrymelvinj.com/work/${canonicalSlug}`,
+    },
+    headline: project.title,
+    description: project.summary,
+    url: `https://www.jerrymelvinj.com/work/${canonicalSlug}`,
+    author: {
+      "@type": "Person",
+      name: "Jerry Melvin J",
+      url: "https://www.jerrymelvinj.com/",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Jerry Melvin J",
+      url: "https://www.jerrymelvinj.com/",
+    },
+    inLanguage: "en-US",
+    about: project.tags,
+  };
+}
+
 export default async function CaseStudyPage({ params }: Props) {
   const { slug } = await params;
   const project = findProject(slug);
@@ -103,26 +262,8 @@ export default async function CaseStudyPage({ params }: Props) {
   const projectNumber = String(currentIndex + 1).padStart(2, "0");
   const totalProjects = String(projects.length).padStart(2, "0");
 
-  // Schema.org Article / CreativeWork JSON-LD
-  const caseStudySchema = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: project.title,
-    headline: project.title,
-    description: project.summary,
-    author: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: "https://www.jerrymelvinj.com",
-    },
-    publisher: {
-      "@type": "Person",
-      name: siteConfig.name,
-    },
-    datePublished: `${project.year}-01-01`,
-    inLanguage: "en-US",
-    keywords: project.tags.join(", "),
-  };
+  // Schema.org Article JSON-LD
+  const caseStudySchema = getCaseStudySchema(project);
 
   // Specialized comprehensive retrospective for OMRON Brandshop flagship project
   if (project.id === "omron-checkout" || project.slug === "ecommerce-checkout-architecture") {
