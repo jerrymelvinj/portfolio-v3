@@ -99,6 +99,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} dark bg-black`}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-93L47S5CX6"
+        />
+        <script
+          id="google-tag-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-93L47S5CX6');
+`,
+          }}
+        />
         <link rel="icon" href="/Logo.svg" type="image/svg+xml" sizes="any" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <JsonLd />
